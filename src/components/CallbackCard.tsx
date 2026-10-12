@@ -5,11 +5,29 @@ import Icon from "@/components/Icon";
 
 export default function CallbackCard() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [parentName, setParentName] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [studentGrade, setStudentGrade] = useState("Class 5th");
+  const [targetExam, setTargetExam] = useState("AISSEE (Sainik)");
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const targetWhatsAppNumber = "918260586174";
+    const message =
+      `*New Call Back Request - ADAS*\n\n` +
+      ` *Parent Name:* ${parentName}\n` +
+      ` *Mobile Number:* ${mobileNumber}\n` +
+      ` *Student Grade:* ${studentGrade}\n` +
+      ` *Target Exam:* ${targetExam}\n\n`;
+
+    const whatsappUrl = `https://wa.me/${targetWhatsAppNumber}?text=${encodeURIComponent(message)}`;
+
+    if (typeof window !== "undefined") {
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    }
+
     setFormSubmitted(true);
-    alert("Thank you! Our admission counsellor will contact you shortly.");
   };
 
   return (
@@ -51,6 +69,8 @@ export default function CallbackCard() {
               placeholder="e.g. Ramesh Kumar Dash"
               required
               type="text"
+              value={parentName}
+              onChange={(e) => setParentName(e.target.value)}
             />
           </div>
 
@@ -63,6 +83,8 @@ export default function CallbackCard() {
               placeholder="e.g. 9149771961"
               required
               type="tel"
+              value={mobileNumber}
+              onChange={(e) => setMobileNumber(e.target.value)}
             />
           </div>
 
@@ -72,7 +94,8 @@ export default function CallbackCard() {
                 Student Grade
               </label>
               <select
-                defaultValue="Class 5th"
+                value={studentGrade}
+                onChange={(e) => setStudentGrade(e.target.value)}
                 className="w-full h-12 px-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary-container"
               >
                 <option>Class 4th</option>
@@ -88,7 +111,8 @@ export default function CallbackCard() {
                 Target Exam
               </label>
               <select
-                defaultValue="AISSEE (Sainik)"
+                value={targetExam}
+                onChange={(e) => setTargetExam(e.target.value)}
                 className="w-full h-12 px-3 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary-container"
               >
                 <option>AISSEE (Sainik)</option>
