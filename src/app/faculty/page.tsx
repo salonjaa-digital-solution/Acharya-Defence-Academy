@@ -22,7 +22,7 @@ export default function FacultyPage() {
         </div>
         {/* Radiant Sunrise Vector Motif */}
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-b from-secondary-container/20 to-transparent blur-3xl pointer-events-none rounded-full"></div>
-        <div className="relative max-w-[1280px] mx-auto px-margin py-space-lg flex flex-col justify-center flex-1">
+        <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin py-space-lg flex flex-col justify-center flex-1">
           {/* Eyebrow Pill */}
           <div className="flex justify-center mb-space-lg">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-fixed/15 text-secondary-container font-label-eyebrow text-label-eyebrow tracking-widest uppercase shadow-sm">
@@ -107,7 +107,7 @@ export default function FacultyPage() {
             </a>
           </div>
           {/* Quick Trust Counters Strip */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-md">
             <div className="bg-primary-container/60 backdrop-blur rounded-xl p-space-md flex flex-col items-center text-center">
               <div className="flex items-center gap-1 text-secondary-container mb-1">
                 <span className="material-symbols-outlined text-[20px]">
@@ -169,7 +169,7 @@ export default function FacultyPage() {
         className="w-full bg-surface py-20 relative scroll-mt-20"
         id="director-spotlight"
       >
-        <div className="max-w-[1280px] mx-auto px-margin">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin">
           {/* Section Tagline */}
           <div className="flex items-center justify-between flex-wrap gap-4 mb-space-xl">
             <div>
@@ -332,7 +332,7 @@ export default function FacultyPage() {
           </span>
         </div>
 
-        <div className="relative max-w-[1280px] mx-auto px-margin">
+        <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin">
           {/* Eyebrow & Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-fixed/20 text-secondary-container font-label-eyebrow text-label-eyebrow tracking-widest uppercase mb-4 shadow-sm">
@@ -558,7 +558,7 @@ export default function FacultyPage() {
                   <span className="block font-caption text-caption text-secondary-container uppercase tracking-wider font-bold mb-2">
                     Comprehensive 4-Subject Coverage Included:
                   </span>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
                     <div className="flex items-center gap-2 text-xs text-white">
                       <span className="material-symbols-outlined text-secondary-container text-[16px]">calculate</span>
                       <span>Mathematics</span>
@@ -623,7 +623,7 @@ export default function FacultyPage() {
 
       {/* SECTION 3: ACADEMY FACULTY SERVICES & MENTORSHIP PROVISIONS (IMAGE-FREE) */}
       <section className="w-full bg-surface py-20 relative">
-        <div className="max-w-[1280px] mx-auto px-margin">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-secondary-fixed/40 text-secondary font-label-eyebrow text-label-eyebrow uppercase tracking-widest mb-3">
@@ -969,7 +969,7 @@ export default function FacultyPage() {
           <span className="w-12 h-0.5 bg-secondary-container/40 rounded-full"></span>
           <span className="text-xs">★</span>
         </div>
-        <div className="max-w-[1280px] mx-auto px-margin">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-space-xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-secondary-fixed/40 text-secondary font-label-eyebrow text-label-eyebrow tracking-widest uppercase mb-2">
@@ -1079,7 +1079,7 @@ export default function FacultyPage() {
       <section className="w-full bg-gradient-to-r from-primary via-primary-container to-tertiary text-on-primary py-16 relative overflow-hidden">
         {/* Rising Sun Motif */}
         <div className="absolute -bottom-20 right-10 w-80 h-80 rounded-full bg-secondary-container/15 blur-3xl pointer-events-none"></div>
-        <div className="max-w-[1280px] mx-auto px-margin relative">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin relative">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-space-lg">
             <div className="max-w-2xl text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/20 text-secondary-container font-label-eyebrow text-label-eyebrow uppercase tracking-widest mb-3">

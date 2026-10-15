@@ -522,7 +522,7 @@ export default function ResultPage() {
   return (
     <div className="flex flex-col w-full">
       {/* HERO SECTION: Monumental Institutional Arch & Victory Showcase */}
-      <section className="relative bg-gradient-to-b from-primary via-primary-container to-primary text-on-primary overflow-hidden pt-12 pb-24 md:pb-32 px-margin min-h-[calc(100vh-4rem)]">
+      <section className="relative bg-gradient-to-b from-primary via-primary-container to-primary text-on-primary overflow-hidden pt-12 pb-24 md:pb-32 px-4 sm:px-6 lg:px-margin min-h-[calc(100vh-4rem)]">
         {/* Architectural Subtle Ray Patterns & Giant Watermark */}
         <div className="absolute inset-0 pointer-events-none select-none flex items-center justify-center opacity-5 overflow-hidden">
           <span className="font-display text-[140px] md:text-[280px] font-extrabold tracking-widest text-on-primary uppercase">
@@ -631,7 +631,7 @@ export default function ResultPage() {
       </section>
 
       {/* FLOATING CATEGORY FILTER BAR */}
-      <div className="relative -mt-8 z-30 px-margin w-full max-w-[1280px] mx-auto">
+      <div className="relative -mt-8 z-30 px-4 sm:px-6 lg:px-margin w-full max-w-[1280px] mx-auto">
         <div className="bg-surface-container-lowest shadow-xl rounded-2xl px-4 py-4 md:px-6 md:py-5 flex justify-center">
           {/* Exam Sub-Filter Pills */}
           <div
@@ -670,7 +670,7 @@ export default function ResultPage() {
       </div>
 
       {/* SECTION 4: ACHIEVERS HALL OF FAME GRID (4-COLUMN RESPONSIVE) */}
-      <section className="max-w-[1280px] mx-auto px-margin py-12 w-full">
+      <section className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin py-12 w-full">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
             <div className="flex items-center gap-2 mb-2">
@@ -904,7 +904,7 @@ export default function ResultPage() {
       </section>
 
       {/* SECTION 7: CALL TO ACTION BAND WITH RISING SUN MOTIF */}
-      <section className="relative bg-gradient-to-r from-primary via-primary-container to-primary text-on-primary py-16 px-margin overflow-hidden">
+      <section className="relative bg-gradient-to-r from-primary via-primary-container to-primary text-on-primary py-16 px-4 sm:px-6 lg:px-margin overflow-hidden">
         {/* Radiant sunrise graphic element */}
         <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-secondary-container/40 rounded-t-full blur-3xl pointer-events-none"></div>
         <div className="relative max-w-[1280px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
@@ -920,17 +920,17 @@ export default function ResultPage() {
               official 3-year result gazette.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-4 justify-center shrink-0">
+          <div className="flex flex-wrap items-center gap-4 justify-center shrink-0 w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setEnquiryOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
             >
               Book Free Diagnostic Test
             </button>
             <a
               href="tel:9149771961"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 text-on-primary font-label-btn text-label-btn backdrop-blur-md transition-all cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 text-on-primary font-label-btn text-label-btn backdrop-blur-md transition-all cursor-pointer"
             >
               <span className="material-symbols-outlined text-[18px]">
                 call

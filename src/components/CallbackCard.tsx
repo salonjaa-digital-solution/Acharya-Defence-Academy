@@ -88,7 +88,7 @@ export default function CallbackCard() {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-space-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
             <div>
               <label className="block font-caption text-caption text-secondary-fixed mb-1 font-semibold uppercase">
                 Student Grade

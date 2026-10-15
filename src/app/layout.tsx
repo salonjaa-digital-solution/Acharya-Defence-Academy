@@ -1,24 +1,9 @@
 import type { Metadata } from "next";
-import { Epilogue, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollProgressBar from "@/components/layout/ScrollProgressBar";
 import Icon from "@/components/Icon";
-
-const epilogue = Epilogue({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-epilogue",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Acharya Defence Academy (ADAS), Sambalpur",
@@ -36,7 +21,7 @@ export default function RootLayout({
       lang="en"
       data-scroll-behavior="smooth"
       suppressHydrationWarning
-      className={`${epilogue.variable} ${inter.variable} min-h-screen scroll-smooth antialiased`}
+      className="min-h-screen scroll-smooth antialiased"
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +31,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <link

@@ -19,7 +19,7 @@ export default function ContactPage() {
         {/* Radiant Sunrise Vector Motif */}
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-b from-secondary-container/20 to-transparent blur-3xl pointer-events-none rounded-full"></div>
 
-        <div className="relative max-w-[1280px] mx-auto px-margin py-space-lg flex flex-col justify-center flex-1">
+        <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin py-space-lg flex flex-col justify-center flex-1">
           {/* Saffron Eyebrow Pill */}
           <div className="flex justify-center mb-space-lg">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-fixed/15 text-secondary-container font-label-eyebrow text-label-eyebrow tracking-widest uppercase shadow-sm">
@@ -60,7 +60,7 @@ export default function ContactPage() {
           </div>
 
           {/* 4 Contact Highlight Cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-space-md lg:gap-space-lg pt-space-lg mt-space-sm max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md lg:gap-space-lg pt-space-lg mt-space-sm max-w-5xl mx-auto">
             <a
               href="tel:9149771961"
               className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all"
@@ -136,14 +136,14 @@ export default function ContactPage() {
 
       {/* 2. CAMPUS CONTACT DESKS */}
       <section className="w-full bg-surface py-16 md:py-24">
-        <div className="max-w-[1280px] mx-auto px-margin">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
             {/* Left: Callback Form */}
             <CallbackCard />
             {/* Right: Campus Directives & Location */}
             <div className="lg:col-span-7 space-y-6">
               {/* Direct Desks Card */}
-              <div className="bg-primary text-on-primary rounded-3xl p-8 shadow-md">
+              <div className="bg-primary text-on-primary rounded-3xl p-6 sm:p-8 shadow-md">
                 <span className="font-label-eyebrow text-label-eyebrow text-secondary-fixed-dim uppercase tracking-widest font-bold block mb-2">
                   DIRECT PHONE LINES
                 </span>
@@ -224,7 +224,7 @@ export default function ContactPage() {
       </section>
 
       {/* 4. CALL TO ACTION BAND */}
-      <section className="relative bg-gradient-to-r from-primary via-primary-container to-primary text-on-primary py-16 px-margin overflow-hidden">
+      <section className="relative bg-gradient-to-r from-primary via-primary-container to-primary text-on-primary py-16 px-4 sm:px-6 lg:px-margin overflow-hidden">
         <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-secondary-container/40 rounded-t-full blur-3xl pointer-events-none"></div>
         <div className="relative max-w-[1280px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
           <div className="max-w-2xl">
@@ -238,10 +238,10 @@ export default function ContactPage() {
               Visit us at Dhankauda, Sambalpur or arrange a direct telephonic strategy session.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-4 justify-center shrink-0">
+          <div className="flex flex-wrap items-center gap-4 justify-center shrink-0 w-full sm:w-auto">
             <a
               href="tel:9149771961"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn shadow-xl hover:shadow-2xl transition-all hover:scale-105"
             >
               Call +91 9149771961
             </a>
@@ -260,7 +260,7 @@ export default function ContactPage() {
 
       {/* LOCATION & DIRECTIONS */}
       <section className="w-full bg-surface-container-low py-space-xl">
-        <div className="max-w-[1280px] mx-auto px-margin">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin">
           <div className="bg-surface-container-lowest rounded-3xl p-6 sm:p-10 shadow-xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
               {/* Left: Styled Campus Map Visual */}

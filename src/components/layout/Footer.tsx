@@ -13,7 +13,7 @@ export default function Footer() {
       {/* Decorative gradient top bar */}
       <div className="w-full h-3 bg-gradient-to-r from-secondary-container via-secondary to-primary-container relative opacity-90"></div>
 
-      <div className="max-w-[1280px] mx-auto px-margin py-space-xl">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-margin py-space-xl">
         {/* Call to action card */}
         <div className="bg-primary-container rounded-xl p-space-lg md:p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-lg mb-space-xl">
           <div className="max-w-xl text-center md:text-left">
@@ -24,17 +24,17 @@ export default function Footer() {
               Enroll today at Acharya Defence Academy, Sambalpur for rigorous, disciplined preparation.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-space-md shrink-0 justify-center">
+          <div className="flex flex-wrap items-center gap-space-md shrink-0 justify-center w-full md:w-auto">
             <button
               type="button"
               onClick={() => setApplyOpen(true)}
-              className="inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn px-6 py-3 rounded-full shadow-md transition-all cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn px-6 py-3 rounded-full shadow-md transition-all cursor-pointer"
               data-path="apply-for-admission"
             >
               Apply for Admission
             </button>
             <a
-              className="inline-flex items-center justify-center bg-transparent text-on-primary font-label-btn text-label-btn px-6 py-3 rounded-full border border-surface-container-highest hover:bg-on-primary hover:text-primary transition-all gap-space-xs"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent text-on-primary font-label-btn text-label-btn px-6 py-3 rounded-full border border-surface-container-highest hover:bg-on-primary hover:text-primary transition-all gap-space-xs"
               href="tel:9149771961"
             >
               <Icon name="call" className="text-[18px]" />
