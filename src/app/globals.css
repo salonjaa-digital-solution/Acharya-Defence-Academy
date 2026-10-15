@@ -83,12 +83,16 @@
 }
 
 @layer base {
-  html, body {
-    margin: 0;
-    padding: 0;
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   body {
-    overscroll-behavior: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
   }
   main > :first-child {
     margin-top: 0 !important;
@@ -98,8 +102,38 @@
   }
 }
 
+/* Modern sleek scrollbar */
 ::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f3ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #072c54;
+  border-radius: 9999px;
+  border: 2px solid #f0f3ff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fe6332;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #072c54 #f0f3ff;
+}
+
+/* Utility to hide scrollbars only on specific inner containers */
+.no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @keyframes marquee {

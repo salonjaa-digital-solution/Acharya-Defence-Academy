@@ -36,7 +36,7 @@ export default function RootLayout({
       lang="en"
       data-scroll-behavior="smooth"
       suppressHydrationWarning
-      className={`${epilogue.variable} ${inter.variable} h-full scroll-smooth antialiased`}
+      className={`${epilogue.variable} ${inter.variable} min-h-screen scroll-smooth antialiased`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -21,6 +21,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setEnquiryOpen(false);
+    document.body.style.overflow = "";
+  }, [pathname]);
+
   const isHome = pathname === "/";
   const isAbout = pathname === "/about";
   const isCourses = pathname === "/courses";
