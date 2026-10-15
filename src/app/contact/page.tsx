@@ -166,10 +166,33 @@ export default function ContactPage() {
                     </div>
                     <a
                       href="tel:9149771961"
-                      className="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary"
+                      className="w-9 h-9 rounded-full bg-secondary-container hover:bg-secondary flex items-center justify-center text-on-secondary transition-colors"
+                      aria-label="Call Main Reception"
                     >
                       <span className="material-symbols-outlined text-[18px]">
                         call
+                      </span>
+                    </a>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-primary-container/80 flex items-center justify-between">
+                    <div>
+                      <span className="block font-caption text-caption text-secondary-fixed">
+                        WhatsApp Admission Desk
+                      </span>
+                      <span className="font-title-md text-title-md text-on-primary font-bold">
+                        +91 9149771961
+                      </span>
+                    </div>
+                    <a
+                      href="https://wa.me/919149771961?text=Hello%20Acharya%20Defence%20Academy%2C%20I%20want%20to%20enquire%20about%20admissions."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 rounded-full bg-secondary-container hover:bg-secondary flex items-center justify-center text-on-secondary transition-colors"
+                      aria-label="Chat on WhatsApp"
+                    >
+                      <span className="material-symbols-outlined text-[18px]">
+                        chat
                       </span>
                     </a>
                   </div>
@@ -185,7 +208,8 @@ export default function ContactPage() {
                     </div>
                     <a
                       href="mailto:hsasbp@gmail.com"
-                      className="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary"
+                      className="w-9 h-9 rounded-full bg-secondary-container hover:bg-secondary flex items-center justify-center text-on-secondary transition-colors"
+                      aria-label="Email Director Desk"
                     >
                       <span className="material-symbols-outlined text-[18px]">
                         mail

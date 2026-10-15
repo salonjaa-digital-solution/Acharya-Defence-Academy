@@ -54,7 +54,7 @@ export default function Footer() {
                 src="https://lh3.googleusercontent.com/aida/AEtjO1ULKJzJOHT9R1kMJgWS94kd5pichAiEtXmYNyHq-Fva_Bsw1XYE5udlA3Se-eCtaM5Z4KfHoHvfKPT07mBtfdNCqkJTrL9fRcy7SNKzB9p1QU3tVDFYl1aFx4tnZkzZ-a1A0uHL5NTYEszRGUMEWSQFilFXTJ6BQ5dOISsX68F4FJm2TJDZQcqZ858AIRW405FbYdNuGfZ8dpPKGiBfN6xLyepcI6ywH53e6SSaFXW-WQ"
               /> */}
               <span className="font-title-lg text-title-lg text-on-primary">
-                ADAS Sambalpur
+                ADA Sambalpur
               </span>
             </div>
             <p className="font-body-sm text-body-sm text-on-primary-container leading-relaxed">

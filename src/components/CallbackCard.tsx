@@ -13,7 +13,7 @@ export default function CallbackCard() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const targetWhatsAppNumber = "918260586174";
+    const targetWhatsAppNumber = "919149771961";
     const message =
       `*New Call Back Request - ADAS*\n\n` +
       ` *Parent Name:* ${parentName}\n` +

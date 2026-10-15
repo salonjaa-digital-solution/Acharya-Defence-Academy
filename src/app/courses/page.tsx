@@ -2,7 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import EnquiryModal from "@/components/EnquiryModal";
+import courseSainik from "@/assets/course-sainik.webp";
+import courseRms from "@/assets/course-rms.webp";
+import courseRimc from "@/assets/course-rimc.webp";
+import courseJnvst from "@/assets/course-jnvst.webp";
+import courseOavs from "@/assets/course-oavs.webp";
+import courseCbse from "@/assets/course-cbse.webp";
 
 type CourseCategory = "all" | "defence" | "gov" | "cbse";
 
@@ -205,11 +212,13 @@ export default function CoursesPage() {
               <div className="h-2 bg-on-tertiary-container w-full"></div>
               <div className="p-space-lg lg:p-space-xl grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
                 <div className="lg:col-span-5 relative rounded-xl overflow-hidden shadow-sm h-64 lg:h-full min-h-[260px]">
-                  <img
+                  <Image
                     className="w-full h-full object-cover"
-                    data-alt="Smart young cadets in crisp Indian military school khaki uniforms sitting with discipline during an academic coaching class in Sambalpur, bright morning light pouring through institutional windows with national flags visible."
                     alt="Sainik School Cadets at Acharya Defence Academy"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNDAYBWP_WIYPaYBEHrYdWE65EPHg8tadbHPguEhyZEEZE6l7AVe9YAFqzB4F8L8iFu5nf6h4NoSOTWeIU1ctMMSNY2ZFghW3QbLfn38NGV_j21ZtAJNPKqtfwwIMkIBR2raDti-811NyhM3MgsMNO1KPn7a0zA0q863Qi0JbTlo9Hku5uPz5e6cvM9XN8O5NdxHaUQETo9dgFM1h-uc8Ffyk185nCqJl_A6vyQg"
+                    src={courseSainik}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    priority
                   />
                   {/* <div className="absolute top-space-sm left-space-sm bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-space-sm py-space-xs rounded-full uppercase tracking-wider shadow">
                     Flagship Batch
@@ -324,11 +333,12 @@ export default function CoursesPage() {
                 <div className="h-1 bg-primary-container w-full"></div>
                 <div className="p-space-lg space-y-space-md flex-1">
                   <div className="relative h-44 rounded-lg overflow-hidden shadow-sm">
-                    <img
+                    <Image
                       className="w-full h-full object-cover"
-                      data-alt="Indian military boarding school stone corridor with students marching in alignment under warm afternoon sunlight, discipline and regimental ethos represented with clean navy blue academic uniforms."
                       alt="Rashtriya Military Schools Campus"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAltzFpDJZ789OwuMZBP7Jy7YcH0K6wHwmN8Yr87uwdPo4j2AZgXfHb0TPUtScvBkpizS4g0IpeGbGtLG5BPuIX0p78q8OHQcMafM04vf-tXIGc58Dfkgkfy9SCAKr0RjkKPXzwtj7MDKQyvEatfzxbarC3m_q5Y1HIJJJJ1K4U_cYBPrgCePfZmhpufsL2slsAqvwolFSfNlMGVb-C6Dpb4p1FrRQIc_sZCzrtww"
+                      src={courseRms}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     {/* <span className="absolute top-2 left-2 bg-primary-container text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded">
                       Target
@@ -395,11 +405,12 @@ export default function CoursesPage() {
                 <div className="h-1 bg-tertiary-container w-full"></div>
                 <div className="p-space-lg space-y-space-md flex-1">
                   <div className="relative h-44 rounded-lg overflow-hidden shadow-sm">
-                    <img
+                    <Image
                       className="w-full h-full object-cover"
-                      data-alt="A focused young Indian student writing advanced mathematics equations on paper next to an antique brass globe in an elite preparatory academy library, representing RIMC  academic rigor."
-                      alt="RIMC  Prep Student"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWWp64tEyddBsTCYDFQu5IeyYHC7Awd-DaveuvOCj_fFPXJMB8L5KHWM-sBRWGG3Rgf0dt0XGUBvqsCKFN5bul8wXrVmqNzZGlLFsSugdQlj7bPDfx_MDQ4EGo656pAXCcmTRyKECuXSgQ4I6Q_y8SP7t9Ry3rk5PkeHdlcO426SOjQzIcPGSscDojC1uDrWaRUxX8B0lcami8vReJ0qKRRUSKZZ-nfy8l9aedhA"
+                      alt="RIMC Prep Student"
+                      src={courseRimc}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     {/* <span className="absolute top-2 left-2 bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-2 py-0.5 rounded">
                       Elite Tier
@@ -467,11 +478,12 @@ export default function CoursesPage() {
                 <div className="h-1 bg-secondary w-full"></div>
                 <div className="p-space-lg space-y-space-md flex-1">
                   <div className="relative h-44 rounded-lg overflow-hidden shadow-sm">
-                    <img
+                    <Image
                       className="w-full h-full object-cover"
-                      data-alt="Indian students in an active group study session solving geometric and non-verbal reasoning test papers on wooden desks in a modern classroom, bright natural lighting, focused expressions."
                       alt="JNVST Group Study Session"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuArq_rzdZLL-abQwuk6ZfGVXqqgfG5ifA9QLCQsbjaSy8vUC8aoT_JWUtxL5IC7uVGc12HCmfDOlWSJG-gluYunlD_zZlgmgPm_ZD9lKEbHqc2YdGT69jyZgYubDXeal8wM3E-EERcUPT6IKwvuqEAYIYWR_Vd2_y5XjGPhyPJbjIxW8HNIsBx_62BZ4Ilp_M_5Ejm8PaR379Z230CsS30fMm2GBK93WTiPBY-sRA"
+                      src={courseJnvst}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     {/* <span className="absolute top-2 left-2 bg-secondary text-on-secondary font-label-sm text-label-sm px-2 py-0.5 rounded">
                       Government School
@@ -539,11 +551,12 @@ export default function CoursesPage() {
                 <div className="h-1 bg-surface-tint w-full"></div>
                 <div className="p-space-lg space-y-space-md flex-1">
                   <div className="relative h-44 rounded-lg overflow-hidden shadow-sm">
-                    <img
+                    <Image
                       className="w-full h-full object-cover"
-                      data-alt="Teacher in professional attire writing English language and environmental science concepts on a modern chalkboard with attentive Indian school children in Sambalpur, neat notebooks and focused eyes."
                       alt="OAVS Foundation Class"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Cjyd9rXgbmvSU0NSSBVjx_1BffgdiTQ5utCWAdEutLrZDEu32Mc-Gij9G3pQnlRyOoY9PDOg0_I7WsOT5zSVjPErlNOaRTlDx3rPExpGXMNw_yJnMUr3XTsRmxnNRQc2f-8J3XcPYKBtsGcIN7gjtxyTjx3naUwTx7sGmPI0cUiyKsRe5XV33c8NctLk5YlH3ragAER3Srf1Zl-oM0v0eMNRELsa_8rIqBoSmA"
+                      src={courseOavs}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     {/* <span className="absolute top-2 left-2 bg-surface-tint text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded">
                       Odisha State
@@ -610,11 +623,12 @@ export default function CoursesPage() {
                 <div className="h-1 bg-primary w-full"></div>
                 <div className="p-space-lg space-y-space-md flex-1">
                   <div className="relative h-44 rounded-lg overflow-hidden shadow-sm">
-                    <img
+                    <Image
                       className="w-full h-full object-cover"
-                      data-alt="A student holding a golden trophy and scientific certificate standing proudly beside faculty mentors in front of an academic achievement board in Odisha, celebrating national Olympiad success."
                       alt="CBSE Foundation and Olympiad"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9iPZ33lGYvKZclsZ2DcKCfSjEMkcRSfwH6D3gBFLNcYtPr28f926Gw8wl17bL_2kes-wP4uPhxBXok5VtxHDhOi2Mp5nuWta1c9WMMrC3e918S5lVhMUF3WL7L0huhSGIqWt1GF9BiFS9yMXPN6wY63X42Lu_0hi7maK91S9NqEp1YEs867gsQLA4hS5oW3qXMDvdbL37laQAa5J4xwQ8SX37lb62krF7dn0giw"
+                      src={courseCbse}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     {/* <span className="absolute top-2 left-2 bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded">
                       Academics
@@ -671,188 +685,6 @@ export default function CoursesPage() {
                 </div>
               </article>
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. COMPREHENSIVE COMPARISON TABLE SECTION */}
-      <section className="w-full bg-surface-container-low py-space-xl">
-        <div className="max-w-[1240px] mx-auto px-margin-sm lg:px-margin space-y-space-lg">
-          {/* Section Title Lockup */}
-          <div className="space-y-space-xs">
-            <div className="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm uppercase tracking-widest font-bold">
-              <span className="material-symbols-outlined text-[18px] text-on-tertiary-container">
-                rule
-              </span>
-              Side-By-Side Evaluation
-            </div>
-            <h2 className="font-headline-lg text-headline-lg text-primary tracking-tight">
-              Compare Our Courses
-            </h2>
-            <div className="w-12 h-1 bg-on-tertiary-container rounded-full"></div>
-            <p className="font-body-md text-body-md text-on-surface-variant max-w-[680px]">
-              Review our specialized programs by syllabus scope, eligible age
-              categories, residential availability, and historic success performance.
-            </p>
-          </div>
-          {/* Table Container */}
-          <div className="w-full overflow-x-auto rounded-xl shadow-md bg-surface-container-lowest">
-            <table className="w-full text-left border-collapse min-w-[900px]">
-              <thead>
-                <tr className="bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider">
-                  <th className="p-space-md">Course Name</th>
-                  <th className="p-space-md">Target Exam</th>
-                  <th className="p-space-md">Eligible Classes</th>
-                  <th className="p-space-md">Core Subjects Covered</th>
-                  <th className="p-space-md">Batch Timing &amp; Mode</th>
-                  <th className="p-space-md">Selection Track</th>
-                </tr>
-              </thead>
-              <tbody className="divide-none text-body-sm font-body-sm text-on-surface">
-                {/* Row 1 */}
-                <tr className="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
-                  <td className="p-space-md font-bold text-primary flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
-                    Sainik School (AISSEE)
-                  </td>
-                  <td className="p-space-md">AISSEE (NTA)</td>
-                  <td className="p-space-md font-semibold">Class VI &amp; IX</td>
-                  <td className="p-space-md text-on-surface-variant">
-                    Maths, Intelligence, English, GK/General Science, Social Science
-                  </td>
-                  <td className="p-space-md">
-                    <span className="bg-surface-container-high text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-label-sm block w-max">
-                      Residential / Day-Boarding
-                    </span>
-                    <span className="text-xs text-on-surface-variant mt-1 block">
-                      Full-Day Intensive
-                    </span>
-                  </td>
-                  <td className="p-space-md font-bold text-primary">
-                    82% Verified Selection Rate
-                  </td>
-                </tr>
-                {/* Row 2 */}
-                <tr className="hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
-                  <td className="p-space-md font-bold text-primary flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary-container"></span>
-                    RMS Coaching
-                  </td>
-                  <td className="p-space-md">RMS </td>
-                  <td className="p-space-md font-semibold">Class VI &amp; IX</td>
-                  <td className="p-space-md text-on-surface-variant">
-                    Mathematics, General Intelligence, English, General Knowledge +
-                    Interview
-                  </td>
-                  <td className="p-space-md">
-                    <span className="bg-surface-container-high text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-label-sm block w-max">
-                      Residential / Hybrid
-                    </span>
-                    <span className="text-xs text-on-surface-variant mt-1 block">
-                      Regular + Weekend Mocks
-                    </span>
-                  </td>
-                  <td className="p-space-md font-bold text-primary">
-                    High Merit (All 5 RMS)
-                  </td>
-                </tr>
-                {/* Row 3 */}
-                <tr className="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
-                  <td className="p-space-md font-bold text-primary flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-tertiary-container"></span>
-                    RIMC Special Batch
-                  </td>
-                  <td className="p-space-md">RIMC </td>
-                  <td className="p-space-md font-semibold">Class VIII</td>
-                  <td className="p-space-md text-on-surface-variant">
-                    Advanced Subjective Mathematics, Analytical English, General
-                    Knowledge
-                  </td>
-                  <td className="p-space-md">
-                    <span className="bg-surface-container-high text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-label-sm block w-max">
-                      Residential Elite Batch
-                    </span>
-                    <span className="text-xs text-on-surface-variant mt-1 block">
-                      1-on-1 Faculty Mentorship
-                    </span>
-                  </td>
-                  <td className="p-space-md font-bold text-primary">
-                    State Top 3 Qualifiers
-                  </td>
-                </tr>
-                {/* Row 4 */}
-                <tr className="hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
-                  <td className="p-space-md font-bold text-primary flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-secondary"></span>
-                    Jawahar Navodaya (JNVST)
-                  </td>
-                  <td className="p-space-md">JNVST (NVS)</td>
-                  <td className="p-space-md font-semibold">Class VI &amp; IX</td>
-                  <td className="p-space-md text-on-surface-variant">
-                    Mental Ability Test (MAT), Arithmetic Test, Regional Language /
-                    English
-                  </td>
-                  <td className="p-space-md">
-                    <span className="bg-surface-container-high text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-label-sm block w-max">
-                      Day-Boarding / Online
-                    </span>
-                    <span className="text-xs text-on-surface-variant mt-1 block">
-                      Morning &amp; Evening Batches
-                    </span>
-                  </td>
-                  <td className="p-space-md font-bold text-primary">
-                    Over 110+ Admissions
-                  </td>
-                </tr>
-                {/* Row 5 */}
-                <tr className="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
-                  <td className="p-space-md font-bold text-primary flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-surface-tint"></span>
-                    Odisha Adarsha (OAVS)
-                  </td>
-                  <td className="p-space-md">OAVS Entrance</td>
-                  <td className="p-space-md font-semibold">Class VI</td>
-                  <td className="p-space-md text-on-surface-variant">
-                    English, Science, Social Studies, Arithmetic Reasoning
-                  </td>
-                  <td className="p-space-md">
-                    <span className="bg-surface-container-high text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-label-sm block w-max">
-                      Day-Boarding
-                    </span>
-                    <span className="text-xs text-on-surface-variant mt-1 block">
-                      Dedicated Sambalpur Center
-                    </span>
-                  </td>
-                  <td className="p-space-md font-bold text-primary">
-                    90%+ Qualified
-                  </td>
-                </tr>
-                {/* Row 6 */}
-                <tr className="hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
-                  <td className="p-space-md font-bold text-primary flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary"></span>
-                    CBSE Foundation &amp; Olympiad
-                  </td>
-                  <td className="p-space-md">School &amp; Olympiads</td>
-                  <td className="p-space-md font-semibold">Class V to X</td>
-                  <td className="p-space-md text-on-surface-variant">
-                    NCERT Mathematics, Science, Foundation Mental Ability, English
-                    Literature
-                  </td>
-                  <td className="p-space-md">
-                    <span className="bg-surface-container-high text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-label-sm block w-max">
-                      Evening Batch / Weekend
-                    </span>
-                    <span className="text-xs text-on-surface-variant mt-1 block">
-                      Synchronized with School
-                    </span>
-                  </td>
-                  <td className="p-space-md font-bold text-primary">
-                    95%+ Board Distinction
-                  </td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
       </section>

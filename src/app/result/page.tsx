@@ -2,6 +2,26 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import {
+  cadetSaksham,
+  cadetAnshuman,
+  cadetSaanidhya,
+  cadetTanmay,
+  cadetLokesh,
+  cadetAnkit,
+  cadetMayank,
+  cadetSwati,
+  cadetAdarsh,
+  cadetAvneesh,
+  cadetPruthiraj,
+  cadetPrayag,
+  cadetRudransh,
+  cadetShivesh,
+  student1,
+  student2,
+  student3,
+  student4,
+} from "@/assets";
 
 interface Cadet {
   id: string;
@@ -21,141 +41,276 @@ interface Cadet {
 
 const CADETS: Cadet[] = [
   {
-    id: "cadet-1",
-    name: "Ananya Patel",
+    id: "cadet-saksham",
+    name: "Saksham",
     exam: "aissee",
     year: "2026",
-    badge: "AIR 14 (Girls)",
+    badge: "Selected",
     badgeColorClass: "bg-secondary-container text-on-secondary",
-    scoreBadge: "Score: 279 / 300",
-    school: "Sainik School Sambalpur",
-    batchInfo: "Batch 2026 • AISSEE Class VI",
-    marksInfo: "Maths: 146/150 | Lang: 48/50",
-    imgSrc:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBqFOIhDuhSxhXyM11cmxSpRNNm8_0oThBdK1gzArvIP5-tkrVKg58P-6JxLGK4j5KPs0giauVbzv5J8en1OMLnuPHwvO2ywnkpmcQ_jF_F2u-rU3bZTpe4tMJ3PLEj1UiPsqTigCZxyeD8EpUhPoiltMSZfpilHS-ihh23LM_afQFSEwouyvost-wGPeITlh3fFy4d2VC3eGpS3NKhPHWmv-eBlFfYJ_fl7K4NjSMuGartip5AE3pTrg",
-    imgAlt: "Ananya Patel",
-    dataAlt:
-      "Young Indian schoolgirl cadet with hair neatly braided wearing smart formal defence academy uniform looking sharp and proud, clear natural lighting, soft navy and cream backdrop",
+    scoreBadge: "SS Tira",
+    school: "Selected at Sainik School Tira (HP)",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetSaksham.src,
+    imgAlt: "Saksham",
+    dataAlt: "Cadet Saksham selected at Sainik School Tira Himachal Pradesh",
   },
   {
-    id: "cadet-2",
-    name: "Debabrata Nayak",
-    exam: "rms",
+    id: "cadet-anshuman",
+    name: "Anshuman",
+    exam: "aissee",
     year: "2026",
-    badge: "State Top Rank",
-    badgeColorClass: "bg-primary text-on-primary",
-    scoreBadge: "RMS  Qualified",
-    school: "RMS Chail (Himachal)",
-    batchInfo: "Batch 2026 • RMS ",
-    marksInfo: "Interview: Outstanding Grade",
-    imgSrc:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC8Vh71nQr0r2PCPmztzpxhF1nFquz1vFB-t5zyRf_4pQ1oQvr6G660q-TVAotQr99d-0lQatCdkuECp39kzC8C3lgWFAewhtoO4ZpwgaujJjYCmnNpQw6KqvpGzcJ5boyL1c8WUECFIPQjM9WQPjpMo16wcl-6wXzl7P3lfTzeqFzRCbX-i_lYAs8zJItM5LnLceQe3W2ZjF5R19K7E53LarSIh8UOOuFEyGLDwuGXkGVizluXy0CT4w",
-    imgAlt: "Debabrata Nayak",
-    dataAlt:
-      "Disciplined young Indian boy candidate in formal white collared shirt with smart posture and disciplined smile, studio lighting with warm saffron accents and deep blue background",
-  },
-  {
-    id: "cadet-3",
-    name: "Priyanshu Pradhan",
-    exam: "jnvst",
-    year: "2025",
-    badge: "100% Scholarship",
-    badgeColorClass: "bg-secondary-fixed text-on-secondary-fixed",
-    scoreBadge: "JNVST Rank 1 Block",
-    school: "JNV Gosala, Sambalpur",
-    batchInfo: "Batch 2025 • Navodaya Selection",
-    marksInfo: "Mental Ability: 50/50",
-    imgSrc:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDCqskGakbYxGwOPoCPl5YqAcjpXGWWTGdQeJPgN_bby5LQe4PkS7-mcpO61IQiQnq5IC0GQqRHH4L6_mwsQUTzJ0h4oMfCF_LeB3iKHerArQetoRMslWOmzgQJWXEkZACV6gQQZi9Prj1sWUdbkdisJgShZ81GdR_wTssp5F6bb2Yu7PG5HDCeDLox9VsR0Mp65jEPEOXxbQaS8H9PBru1bDYCDe_g-ef6pTQ5xGmNefvrFiUMHTC2BQ",
-    imgAlt: "Priyanshu Pradhan",
-    dataAlt:
-      "Focused Indian rural student boy holding study books with bright confident smile, outdoor campus sunlight, warm earthen colors and institutional crest backdrop",
-  },
-  {
-    id: "cadet-4",
-    name: "Subhashree Barik",
-    exam: "aissee",
-    year: "2025",
-    badge: "State Rank 5",
+    badge: "Selected",
     badgeColorClass: "bg-secondary-container text-on-secondary",
-    scoreBadge: "Score: 275 / 300",
-    school: "SS Bhubaneswar",
-    batchInfo: "Batch 2025 • AISSEE Class VI",
-    marksInfo: "Intelligence Test: 48/50",
-    imgSrc:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBq4xikn6gEaBb_6Qy-cgDjjPGRcQsfEJgWO7nAuTBagJQuPGQ44xjv9blSdlDObpnQVOIrAQu8ClsjNb8-eX_Neeigmoa5hQvIoLV5KKXm29-JOQanDKRIPmITcitQbG7R0QdrtLjhLAxLZFJozs1s4aIo3KErRmXvidCLrj7vCU9diHJOsHA5e7Bhr7YkpKLTCmPc6_SENMyDamw5bdvtWoqm3OUh6anxTl4i-WHI4PQRZsbHRLnawA",
-    imgAlt: "Subhashree Barik",
-    dataAlt:
-      "Smiling young Indian girl student wearing formal blue academy blazer, medal pinned to chest, bright inspiring gaze, soft studio gradient background",
+    scoreBadge: "SS Bhubaneswar",
+    school: "Selected at Sainik School Bhubaneswar",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetAnshuman.src,
+    imgAlt: "Anshuman",
+    dataAlt: "Cadet Anshuman selected at Sainik School Bhubaneswar",
   },
   {
-    id: "cadet-5",
-    name: "Rohan Pradhan",
+    id: "cadet-saanidhya",
+    name: "Saanidhya",
     exam: "aissee",
-    year: "2025",
-    badge: "Class IX Entry",
-    badgeColorClass: "bg-primary text-on-primary",
-    scoreBadge: "Score: 362 / 400",
-    school: "SS Korukonda (AP)",
-    batchInfo: "Batch 2025 • AISSEE Class IX",
-    marksInfo: "Maths: 184/200 | Science: 48/50",
-    imgSrc:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuD8Pj1J0Dp1gY9GR42KG5QMR9R2-flMobtlnsLUoD0oiTNs10EzE5aO8jxCv8ZfayyULvLDDSN6gKdfmirxjppNZ0sXpRUMboYHHtIZML2zh_IFCrm44lkALHb5CmwineEvvhslFYGgGID3lOSALiCZ2Sb6T4FYZCBgNejUJuCuWm9D3gvUKOXhyGYHNzO1Dq9UVD6IgJlxCcXRQCdVdAvnaIlmMYLabRVUSwWvcnWXmvEI_Gj5eAEVHA",
-    imgAlt: "Rohan Pradhan",
-    dataAlt:
-      "Teenage Indian boy cadet in crisp dress shirt with gold laurel badge, standing at attention, dignified look, deep blue and orange soft rim lighting",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetSaanidhya.src,
+    imgAlt: "Saanidhya",
+    dataAlt: "Cadet Saanidhya selected at Sainik School Sambalpur",
   },
   {
-    id: "cadet-6",
-    name: "Swikriti Sahu",
+    id: "cadet-tanmay",
+    name: "Tanmay",
     exam: "aissee",
-    year: "2024",
-    badge: "Odisha Girls Rank 2",
+    year: "2026",
+    badge: "Selected",
     badgeColorClass: "bg-secondary-container text-on-secondary",
-    scoreBadge: "Score: 271 / 300",
-    school: "Sainik School Sambalpur",
-    batchInfo: "Batch 2024 • AISSEE Class VI",
-    marksInfo: "GK: 46/50 | Reasoning: 50/50",
-    imgSrc:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCVQPC9KagNN_sYX1oAJpjTknIR_lhqyynaXbqSwoWBxEURC9WjPYjsXCvVGMFw1Z_yQ1l4Swxyynd39fZvUH6irM4xwPUxu_jvsJ7_0EzsC73cHwdaqtQw9gZM8ynCO8VR4_LaoWZfmQfebqCpY7ecNjtXsAOr9X3SMM21qKipc0o9dGviQl97g63oUr5zxBM5Mm2seApKkK1rjJnA55_gbv5t8BnYbB8hW7LHxPkUv6HyQiJDgLjF4g",
-    imgAlt: "Swikriti Sahu",
-    dataAlt:
-      "Young Indian female student wearing traditional tilak and academy scarf, confident determination, softly lit clean background",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetTanmay.src,
+    imgAlt: "Tanmay",
+    dataAlt: "Cadet Tanmay selected at Sainik School Sambalpur",
   },
   {
-    id: "cadet-7",
-    name: "Ashutosh Meher",
-    exam: "rms",
-    year: "2024",
-    badge: "RMS Selected",
-    badgeColorClass: "bg-primary text-on-primary",
-    scoreBadge: "Class VI Entry",
-    school: "RMS Belgaum (Karnataka)",
-    batchInfo: "Batch 2024 • RMS ",
-    marksInfo: "Maths: 49/50 | Medical: Fit",
-    imgSrc:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAyd1bA1AqTchBf52ajPDUTZaWYfBQqKkhi6p3hN8TM74qMA9cAml1FKLtqZbu6ZwMtq3cAgaAsb5grJVze9gvzK1Yj75wCK2XP7d5hzhluCnZTqshIdz8IyTeG_2IY4U0tt4dvCUuBCmyTHczw94xMc27vXV5bpX5G5zsB_TYFC1wP6l4leNKq6faa7gdh97_StAihudu8QsskUNrI4YxCWW3_FS7NxrYWeYDVb0NV21ihvZYxNx7O1A",
-    imgAlt: "Ashutosh Meher",
-    dataAlt:
-      "Young energetic Indian boy in polished cadet shirt looking straight into camera with quiet discipline and pride, warm glow illumination",
+    id: "cadet-lokesh",
+    name: "Lokesh",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetLokesh.src,
+    imgAlt: "Lokesh",
+    dataAlt: "Cadet Lokesh selected at Sainik School Sambalpur",
   },
   {
-    id: "cadet-8",
-    name: "Tanmay Hota",
-    exam: "rimc",
-    year: "2024",
-    badge: "Odisha Quota",
+    id: "cadet-ankit",
+    name: "Ankit",
+    exam: "oavs",
+    year: "2026",
+    badge: "Selected",
     badgeColorClass: "bg-secondary-container text-on-secondary",
-    scoreBadge: "RIMC Written Qualifier",
-    school: "RIMC  (Interview)",
-    batchInfo: "Batch 2024 • RIMC Entrance",
-    marksInfo: "English: 88/125 | Maths: 182/200",
-    imgSrc:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAT3vHt8jbuOwk4GFvlMUuBDNzvFlBurJh5Tb_WJbOqNO26HGRbC_BKLAWpYAsWBez0_si9LSdO9zOtT5g7Ly47NGy1NL_geNVNtweGtF3ZRf1Z3k3dunMlOpcuknvo3H0yH-BP13b2Lk5ESbFTeBIy_A3j5ImtP69XSyDCrBVplZhxDkcCcrBtyJ4kWu2FkPFHEMUgmWDON0jEePJoR_kvCVa9HxeoDHu6pSHig3EdMMwq-p6VAZ0fdg",
-    imgAlt: "Tanmay Hota",
-    dataAlt:
-      "Smart intellectual Indian boy student wearing crisp blazer with medal, proud posture, soft dramatic lighting with subtle Indian flag colors in deep background",
+    scoreBadge: "OAV Sambalpur",
+    school: "Selected at Adarsh Vidyalaya Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "OAVS Selection",
+    imgSrc: cadetAnkit.src,
+    imgAlt: "Ankit",
+    dataAlt: "Cadet Ankit selected at Adarsh Vidyalaya Sambalpur",
   },
+  {
+    id: "cadet-mayank",
+    name: "Mayank",
+    exam: "oavs",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "OAV Sambalpur",
+    school: "Selected at Adarsh Vidyalaya Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "OAVS Selection",
+    imgSrc: cadetMayank.src,
+    imgAlt: "Mayank",
+    dataAlt: "Cadet Mayank selected at Adarsh Vidyalaya Sambalpur",
+  },
+  {
+    id: "cadet-swati",
+    name: "Swati",
+    exam: "oavs",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "OAV Jharsuguda",
+    school: "Selected at Adarsh Vidyalaya Jharsuguda",
+    batchInfo: "Batch 2026",
+    marksInfo: "OAVS Selection",
+    imgSrc: cadetSwati.src,
+    imgAlt: "Swati",
+    dataAlt: "Cadet Swati selected at Adarsh Vidyalaya Jharsuguda",
+  },
+  {
+    id: "cadet-adarsh",
+    name: "Adarsh",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetAdarsh.src,
+    imgAlt: "Adarsh",
+    dataAlt: "Cadet Adarsh selected at Sainik School Sambalpur",
+  },
+  {
+    id: "cadet-avneesh",
+    name: "Avneesh Panda",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetAvneesh.src,
+    imgAlt: "Avneesh Panda",
+    dataAlt: "Cadet Avneesh Panda selected at Sainik School Sambalpur",
+  },
+  {
+    id: "cadet-pruthiraj",
+    name: "Pruthiraj",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetPruthiraj.src,
+    imgAlt: "Pruthiraj",
+    dataAlt: "Cadet Pruthiraj selected at Sainik School Sambalpur",
+  },
+  {
+    id: "cadet-prayag",
+    name: "Prayag",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetPrayag.src,
+    imgAlt: "Prayag",
+    dataAlt: "Cadet Prayag selected at Sainik School Sambalpur",
+  },
+  {
+    id: "cadet-rudransh",
+    name: "Rudransh",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetRudransh.src,
+    imgAlt: "Rudransh",
+    dataAlt: "Cadet Rudransh selected at Sainik School Sambalpur",
+  },
+  {
+    id: "cadet-shivesh",
+    name: "Shivesh",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: cadetShivesh.src,
+    imgAlt: "Shivesh",
+    dataAlt: "Cadet Shivesh selected at Sainik School Sambalpur",
+  },
+  {
+    id: "cadet-baibhav",
+    name: "Baibhav",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "New SS Raipur",
+    school: "Selected at New Sainik School Raipur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: student1.src,
+    imgAlt: "Baibhav",
+    dataAlt: "Cadet Baibhav selected at New Sainik School Raipur",
+  },
+  {
+    id: "cadet-aryan",
+    name: "Aryan",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Bhubaneswar",
+    school: "Selected at Sainik School Bhubaneswar",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: student2.src,
+    imgAlt: "Aryan",
+    dataAlt: "Cadet Aryan selected at Sainik School Bhubaneswar",
+  },
+  {
+    id: "cadet-rishab",
+    name: "Rishab",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: student3.src,
+    imgAlt: "Rishab",
+    dataAlt: "Cadet Rishab selected at Sainik School Sambalpur",
+  },
+  {
+    id: "cadet-manish",
+    name: "Manish",
+    exam: "aissee",
+    year: "2026",
+    badge: "Selected",
+    badgeColorClass: "bg-secondary-container text-on-secondary",
+    scoreBadge: "SS Sambalpur",
+    school: "Selected at Sainik School Sambalpur",
+    batchInfo: "Batch 2026",
+    marksInfo: "AISSEE Qualified",
+    imgSrc: student4.src,
+    imgAlt: "Manish",
+    dataAlt: "Cadet Manish selected at Sainik School Sambalpur",
+  },
+
 ];
 
 const ADDITIONAL_CADETS: Cadet[] = [
@@ -226,22 +381,15 @@ const ADDITIONAL_CADETS: Cadet[] = [
 ];
 
 export default function ResultPage() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [currentYear, setCurrentYear] = useState<string>("all");
   const [currentExam, setCurrentExam] = useState<string>("all");
   const [isLoadedMore, setIsLoadedMore] = useState(false);
 
   const allCadets = isLoadedMore ? [...CADETS, ...ADDITIONAL_CADETS] : CADETS;
 
   const filteredCadets = allCadets.filter((cadet) => {
-    const matchYear = currentYear === "all" || cadet.year === currentYear;
     const matchExam = currentExam === "all" || cadet.exam === currentExam;
 
-    const term = searchTerm.toLowerCase().trim();
-    const cadetFullText = `${cadet.name} ${cadet.school} ${cadet.batchInfo} ${cadet.marksInfo} ${cadet.badge} ${cadet.scoreBadge}`.toLowerCase();
-    const matchSearch = !term || cadetFullText.includes(term);
-
-    return matchYear && matchExam && matchSearch;
+    return matchExam;
   });
 
   const handleLoadMore = () => {
@@ -363,67 +511,23 @@ export default function ResultPage() {
         </div>
       </section>
 
-      {/* FLOATING SEARCH & CATEGORY FILTER BAR */}
+      {/* FLOATING CATEGORY FILTER BAR */}
       <div className="relative -mt-8 z-30 px-margin w-full max-w-[1280px] mx-auto">
-        <div className="bg-surface-container-lowest shadow-xl rounded-2xl p-4 md:p-6 flex flex-col gap-5">
-          {/* Search & Main Selectors */}
-          <div className="flex flex-col lg:flex-row items-center gap-4 w-full">
-            <div className="relative flex-1 w-full">
-              <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[22px]">
-                search
-              </span>
-              <input
-                className="w-full pl-12 pr-4 py-3.5 bg-surface-container-low rounded-xl text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest transition-all"
-                id="cadetSearchInput"
-                placeholder="Search cadet by name, roll no, or allocated school..."
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            {/* Batch Year Selector Buttons */}
-            <div
-              className="flex items-center gap-2 overflow-x-auto w-full lg:w-auto pb-2 lg:pb-0 scrollbar-none"
-              id="yearFilterGroup"
-            >
-              {[
-                { label: "All Years", value: "all" },
-                { label: "2026 Batch (New)", value: "2026" },
-                { label: "2025 Batch", value: "2025" },
-                { label: "2024 Batch", value: "2024" },
-              ].map((year) => {
-                const isActive = currentYear === year.value;
-                return (
-                  <button
-                    key={year.value}
-                    type="button"
-                    onClick={() => setCurrentYear(year.value)}
-                    className={`px-4 py-2.5 rounded-full font-label-btn text-label-btn whitespace-nowrap transition-all cursor-pointer ${isActive
-                      ? "bg-primary text-on-primary shadow-sm"
-                      : "bg-surface-container-high text-on-surface-variant hover:text-on-surface"
-                      }`}
-                    data-year={year.value}
-                  >
-                    {year.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
+        <div className="bg-surface-container-lowest shadow-xl rounded-2xl px-4 py-4 md:px-6 md:py-5 flex justify-center">
           {/* Exam Sub-Filter Pills */}
           <div
-            className="flex items-center gap-2 overflow-x-auto pt-2 scrollbar-none"
+            className="flex flex-wrap justify-center items-center gap-2"
             id="examFilterGroup"
           >
-            <span className="text-caption font-caption text-outline uppercase tracking-wider mr-2 hidden sm:inline">
+            <span className="text-caption font-caption text-outline uppercase tracking-wider mr-1 shrink-0">
               Exams:
             </span>
             {[
               { label: "All Exams", value: "all" },
               { label: "AISSEE (Sainik School)", value: "aissee" },
-              { label: "RMS ", value: "rms" },
-              { label: "RIMC ", value: "rimc" },
+              { label: "Adarsh Vidyalaya (OAVS)", value: "oavs" },
+              { label: "RMS", value: "rms" },
+              { label: "RIMC", value: "rimc" },
               { label: "Navodaya (JNVST)", value: "jnvst" },
             ].map((exam) => {
               const isActive = currentExam === exam.value;
@@ -446,149 +550,6 @@ export default function ResultPage() {
         </div>
       </div>
 
-      {/* SECTION 3: TOPPER OF THE YEAR (FLAGSHIP SPOTLIGHT CARD) */}
-      <section className="max-w-[1280px] mx-auto px-margin py-16 w-full">
-        <div className="flex items-center gap-3 mb-8">
-          <span className="w-8 h-1 bg-secondary-container rounded-full"></span>
-          <h2 className="font-headline-sm text-headline-sm text-primary uppercase tracking-wide">
-            Spotlight of the Year
-          </h2>
-        </div>
-        <div className="relative bg-surface-container-lowest rounded-3xl shadow-xl overflow-hidden p-6 md:p-10">
-          {/* Glow ambient back drop */}
-          <div className="absolute -right-24 -top-24 w-96 h-96 bg-secondary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left: Architectural Arch Portrait */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="relative group">
-                {/* Offset decorative saffron arch contour */}
-                <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-t-[120px] rounded-b-2xl bg-secondary-container/20 pointer-events-none transition-transform group-hover:translate-x-4 group-hover:translate-y-4"></div>
-                {/* Arch Card Body */}
-                <div className="relative w-72 md:w-80 h-[430px] rounded-t-[120px] rounded-b-2xl bg-gradient-to-b from-primary-container to-primary overflow-hidden shadow-2xl flex flex-col justify-end p-4">
-                  {/* Radiant sunrise glow in arch head */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-secondary-container/30 rounded-full blur-2xl"></div>
-                  <img
-                    alt="Cadet Soumya Ranjan Dash"
-                    className="absolute inset-0 w-full h-full object-cover object-top"
-                    data-alt="Proud young Indian cadet boy in crisp smart khaki military academy uniform with gold medal around neck, chest pins and epaulets, looking confident with bright radiant sun flare background, studio portrait with deep navy and saffron tones"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWfj0yM2qjygCoMT7GxNq71hWZx2P70hdcfYbVFGpFRHuibjIxNJ8ZVVffB3trG-NlD-MLBBvXZbAR7YUXE3qkTlapO2LvU-smpClZK1mMAHJD5xenBM9hDTc9NfIKxZgWvxqhLjP7u7U31IsFd5B4jbWV8BFTQIPHbYPjfuTgRPYZ-VXzKM3g-pJ2ayaVR4sdE89maiLuMrxtaWEIJ-vw8eEGQ8Vg-JmkwChytqO4s-LqYKZlHttkOw"
-                  />
-                  {/* Subtle bottom gradient vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
-                  {/* Overlaid Laurel Rank Badge */}
-                  <div className="relative z-10 bg-surface-container-lowest/90 backdrop-blur-md rounded-xl p-3 flex items-center justify-between shadow-lg">
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-secondary-container text-[24px]">
-                        military_tech
-                      </span>
-                      <div>
-                        <span className="block font-title-md text-title-md text-primary leading-tight">
-                          AIR 14
-                        </span>
-                        <span className="block font-caption text-caption text-outline">
-                          District Rank 1
-                        </span>
-                      </div>
-                    </div>
-                    <span className="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary font-label-eyebrow text-label-eyebrow">
-                      SELECTED
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Story, Scorecard & Testimonial */}
-            <div className="lg:col-span-7 flex flex-col space-y-6">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="px-3.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold tracking-wide uppercase">
-                  ★ AISSEE 2026 Western Odisha Topper
-                </span>
-                <span className="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption">
-                  Class VI Entry
-                </span>
-              </div>
-              <div>
-                <h3 className="font-display text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">
-                  Cadet Soumya Ranjan Dash
-                </h3>
-                <p className="font-title-lg text-title-lg text-secondary font-semibold mt-1 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[20px]">
-                    school
-                  </span>
-                  Allotted: Sainik School Sambalpur
-                </p>
-              </div>
-
-              {/* Score Breakdown Badges */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                <div className="bg-surface-container-low rounded-xl p-3.5">
-                  <span className="block font-caption text-caption text-outline uppercase tracking-wider">
-                    Total Score
-                  </span>
-                  <span className="font-headline-sm text-headline-sm text-primary">
-                    284{" "}
-                    <span className="font-body-sm text-body-sm text-outline">
-                      / 300
-                    </span>
-                  </span>
-                </div>
-                <div className="bg-surface-container-low rounded-xl p-3.5">
-                  <span className="block font-caption text-caption text-outline uppercase tracking-wider">
-                    Mathematics
-                  </span>
-                  <span className="font-headline-sm text-headline-sm text-secondary-container">
-                    150{" "}
-                    <span className="font-body-sm text-body-sm text-outline">
-                      / 150
-                    </span>
-                  </span>
-                </div>
-                <div className="bg-surface-container-low rounded-xl p-3.5 col-span-2 sm:col-span-1">
-                  <span className="block font-caption text-caption text-outline uppercase tracking-wider">
-                    GK &amp; Reasoning
-                  </span>
-                  <span className="font-headline-sm text-headline-sm text-primary">
-                    134{" "}
-                    <span className="font-body-sm text-body-sm text-outline">
-                      / 150
-                    </span>
-                  </span>
-                </div>
-              </div>
-
-              {/* Cadet Quote */}
-              <div className="relative bg-surface-container-low/60 rounded-2xl p-5">
-                <span className="material-symbols-outlined text-secondary-fixed-dim text-[36px] absolute top-3 right-4 select-none opacity-40">
-                  format_quote
-                </span>
-                <p className="font-body-md text-body-md text-on-surface italic relative z-10 leading-relaxed">
-                  &quot;ADAS taught me mental speed and disciplined OMR accuracy.
-                  The daily 4-hour supervised test sessions turned my dream of
-                  entering Sainik School into reality.&quot;
-                </p>
-              </div>
-
-              {/* Father's Endorsement Note */}
-              <div className="flex items-center gap-3 pt-2">
-                <div className="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-caption">
-                  RD
-                </div>
-                <div>
-                  <span className="block font-title-md text-title-md text-primary">
-                    Sri Rabindra Dash (Father)
-                  </span>
-                  <span className="block font-caption text-caption text-outline">
-                    Dhankauda, Sambalpur • &quot;The personalized care by mentors
-                    made all the difference.&quot;
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 4: ACHIEVERS HALL OF FAME GRID (4-COLUMN RESPONSIVE) */}
       <section className="max-w-[1280px] mx-auto px-margin py-12 w-full">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
@@ -598,17 +559,17 @@ export default function ResultPage() {
                 military_tech
               </span>
               <span className="font-label-eyebrow text-label-eyebrow uppercase text-secondary tracking-widest font-bold">
-                Pride of ADAS Sambalpur
+                Pride of ADA Sambalpur
               </span>
             </div>
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">
               Hall of Fame Cadets
             </h2>
           </div>
-          <p className="font-body-md text-body-md text-on-surface-variant max-w-md">
+          {/* <p className="font-body-md text-body-md text-on-surface-variant max-w-md">
             Verified results of our dedicated students who conquered India’s
             toughest juvenile competitive examinations.
-          </p>
+          </p> */}
         </div>
 
         {/* Cadets Grid */}
@@ -619,42 +580,84 @@ export default function ResultPage() {
           {filteredCadets.map((cadet) => (
             <div
               key={cadet.id}
-              className="group bg-surface-container-lowest rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="relative bg-primary-container rounded-3xl overflow-hidden flex flex-col items-center text-center group transition-all duration-300 hover:-translate-y-2"
+              style={{ boxShadow: "0 4px 32px 0 rgba(1,23,52,0.28), 0 1px 4px 0 rgba(254,99,50,0.08)" }}
               data-exam={cadet.exam}
               data-year={cadet.year}
             >
-              <div>
-                {/* Arch Image Wrapper */}
-                <div className="relative w-full h-64 rounded-t-[70px] rounded-b-xl overflow-hidden bg-primary-container mb-4">
-                  <img
-                    alt={cadet.imgAlt}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    data-alt={cadet.dataAlt}
-                    src={cadet.imgSrc}
-                  />
+              {/* Top saffron-orange accent bar */}
+              <div
+                className="w-full h-1.5 flex-shrink-0"
+                style={{ background: "linear-gradient(90deg, #fe6332 0%, #ffb59f 50%, #fe6332 100%)" }}
+              />
+
+              {/* Subtle radial glow blob at top */}
+              <div
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-56 h-28 pointer-events-none"
+                style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(254,99,50,0.18) 0%, transparent 70%)" }}
+              />
+
+              <div className="flex flex-col items-center px-6 pb-7 pt-6 w-full relative">
+
+                {/* Photo with themed conic-gradient glow ring */}
+                <div className="relative mb-5 flex-shrink-0">
+                  {/* Animated conic gradient ring using site colors */}
                   <div
-                    className={`absolute top-3 right-3 px-2.5 py-1 rounded-full text-caption font-caption font-bold shadow-md ${cadet.badgeColorClass}`}
-                  >
-                    {cadet.badge}
+                    className="absolute -inset-[3px] rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                      background: "conic-gradient(from 180deg, #fe6332, #ffb59f, #072c54, #fe6332)",
+                      filter: "blur(2.5px)",
+                    }}
+                  />
+                  {/* Separator so photo doesn't touch ring */}
+                  <div className="absolute -inset-[1px] rounded-full bg-primary-container" />
+                  {/* Actual photo */}
+                  <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-secondary-container/20">
+                    <img
+                      alt={cadet.imgAlt}
+                      className="w-full h-full object-cover object-top"
+                      style={{ transform: "scale(1)", transition: "transform 0.5s ease" }}
+                      onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.1)")}
+                      onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
+                      data-alt={cadet.dataAlt}
+                      src={cadet.imgSrc}
+                    />
                   </div>
-                  <div className="absolute bottom-2 left-2 right-2 bg-primary/80 backdrop-blur-sm text-on-primary rounded-lg py-1 px-2.5 text-center text-caption font-caption">
-                    {cadet.scoreBadge}
-                  </div>
+
                 </div>
-                <h3 className="font-title-lg text-title-lg text-primary tracking-tight">
+
+                {/* Badge pill — themed orange glass */}
+                <span
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full font-label-eyebrow text-label-eyebrow tracking-widest uppercase mb-3 border"
+                  style={{
+                    background: "rgba(254,99,50,0.15)",
+                    color: "#ffb59f",
+                    borderColor: "rgba(254,99,50,0.28)",
+                    fontSize: "10px",
+                  }}
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: "13px", fontVariationSettings: "'FILL' 1" }}>
+                    military_tech
+                  </span>
+                  {cadet.scoreBadge}
+                </span>
+
+                {/* Student Name — white on navy */}
+                <h3 className="font-title-lg text-title-lg text-on-primary font-bold leading-tight mt-0.5">
                   {cadet.name}
                 </h3>
-                <span className="block font-caption text-caption text-secondary font-semibold mt-0.5">
+
+                {/* Saffron divider */}
+                <div
+                  className="w-10 h-[2px] rounded-full my-3"
+                  style={{ background: "linear-gradient(90deg, #fe6332, #ffb59f)" }}
+                />
+
+                {/* School — muted theme text */}
+                <p className="font-body-sm text-body-sm text-on-primary-container leading-snug">
                   {cadet.school}
-                </span>
-              </div>
-              <div className="mt-4 pt-3 bg-surface-container-low rounded-xl p-2.5 text-center">
-                <span className="font-caption text-caption text-outline block">
-                  {cadet.batchInfo}
-                </span>
-                <span className="font-body-sm text-body-sm font-semibold text-primary">
-                  {cadet.marksInfo}
-                </span>
+                </p>
+
               </div>
             </div>
           ))}
@@ -669,87 +672,12 @@ export default function ResultPage() {
               No cadets found matching your filter criteria
             </p>
             <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-              Try adjusting the year or exam filter, or clearing your search term.
+              Try adjusting the exam filter.
             </p>
           </div>
         )}
 
-        {/* Load More Button */}
-        <div className="flex justify-center mt-12">
-          <button
-            type="button"
-            className={`inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-btn text-label-btn transition-all shadow-sm hover:shadow-md cursor-pointer ${isLoadedMore ? "opacity-75 cursor-default" : ""
-              }`}
-            id="loadMoreBtn"
-            disabled={isLoadedMore}
-            onClick={handleLoadMore}
-          >
-            <span>
-              {isLoadedMore
-                ? "All 142 Verified Cadets Loaded"
-                : "Load More Achievers (Showing 8 of 142+)"}
-            </span>
-            {!isLoadedMore && (
-              <span className="material-symbols-outlined text-[18px]">
-                expand_more
-              </span>
-            )}
-          </button>
-        </div>
-      </section>
 
-      {/* SECTION 5: PRESTIGIOUS ALLOTTED INSTITUTIONS TICKER */}
-      <section className="w-full bg-primary py-8 overflow-hidden text-on-primary">
-        <div className="max-w-[1280px] mx-auto px-margin mb-3 text-center">
-          <span className="font-label-eyebrow text-label-eyebrow text-secondary-fixed-dim uppercase tracking-widest">
-            Our Cadets Now Serve In Premier Institutions Across India
-          </span>
-        </div>
-        {/* Seamless Marquee Track */}
-        <div className="relative w-full overflow-hidden flex">
-          <div className="flex gap-8 whitespace-nowrap animate-pulse py-2 text-title-md font-title-md text-on-primary-container">
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
-              Sainik School Sambalpur
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
-              Sainik School Bhubaneswar
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
-              Sainik School Korukonda
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
-              Sainik School Kazhakootam
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
-              RMS Chail (HP)
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
-              RMS Dholpur
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
-              RMS Belgaum
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
-              RMS Bengaluru
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
-              RIMC
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
-              Jawahar Navodaya Vidyalaya Gosala
-            </span>
-          </div>
-        </div>
       </section>
 
       {/* SECTION 6: VERIFIED PARENT & CADET TESTIMONIALS STRIP */}

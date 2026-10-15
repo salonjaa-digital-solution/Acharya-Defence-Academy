@@ -48,6 +48,12 @@
   --color-on-primary-fixed: #001c3b;
   --color-inverse-on-surface: #ecf1ff;
   --color-surface-container-high: #dee8ff;
+  --color-foreground: #101c2e;
+  --color-card: #ffffff;
+  --color-card-foreground: #101c2e;
+  --color-muted: #f0f3ff;
+  --color-muted-foreground: #43474e;
+  --color-border: #c3c6cf;
 
   --spacing-margin-mobile: 1.25rem;
   --spacing-margin: 2rem;

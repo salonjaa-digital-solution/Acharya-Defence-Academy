@@ -5,13 +5,21 @@ import Image from "next/image";
 import Icon from "@/components/Icon";
 import heroCadet from "@/assets/hero-cadet.webp";
 import whyChooseUs from "@/assets/why-choose-us.webp";
+import student1 from "@/assets/student1.webp";
+import student2 from "@/assets/student2.webp";
+import student3 from "@/assets/student3.webp";
+import student4 from "@/assets/student4.webp";
+import smartClassroom from "@/assets/smart.jpeg";
+import certificateClassplus from "@/assets/certificate-classplus.jpg";
 import ParentVoicesCarousel from "@/components/ParentVoicesCarousel";
 import CallbackCard from "@/components/CallbackCard";
 import EnquiryModal from "@/components/EnquiryModal";
+import VideoModal from "@/components/VideoModal";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [heroEnquiryOpen, setHeroEnquiryOpen] = useState(false);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -164,7 +172,7 @@ export default function Home() {
                     />
                     <text className="text-[9.5px] uppercase font-bold tracking-widest fill-on-secondary">
                       <textPath href="#textCircle">
-                        AISSEE • RMS • RIMC • ADAS SAMBALPUR •
+                        AISSEE • RMS • RIMC • ADA SAMBALPUR •
                       </textPath>
                     </text>
                   </svg>
@@ -623,6 +631,195 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 5.5. NATIONAL RECOGNITION: CLASSPLUS & SOURAV GANGULY PARTNER CERTIFICATE */}
+      <section
+        id="recognition"
+        className="w-full bg-gradient-to-b from-primary via-[#031b37] to-tertiary text-on-primary py-20 relative overflow-hidden"
+      >
+        {/* Ambient Sunrise Glow & Orbs */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-secondary-container/15 blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 left-10 w-96 h-96 rounded-full bg-primary-container/40 blur-3xl pointer-events-none"></div>
+
+        {/* Faded Watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-[0.03]">
+          <span className="font-display text-[120px] md:text-[200px] font-extrabold tracking-widest text-white whitespace-nowrap">
+            CERTIFIED
+          </span>
+        </div>
+
+        <div className="relative max-w-[1280px] mx-auto px-margin z-10">
+          {/* Eyebrow & Header */}
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-fixed/20 text-secondary-container font-label-eyebrow text-label-eyebrow tracking-widest uppercase mb-4 shadow-sm">
+              <Icon name="verified" className="text-[16px] text-secondary-container" />
+              <span>★ NATIONWIDE PRESTIGE &amp; RECOGNITION ★</span>
+            </div>
+            <h2 className="font-headline-lg text-headline-md md:text-headline-lg text-on-primary tracking-tight font-bold">
+              Classplus Certified Partner — Endorsed by{" "}
+              <span className="text-secondary-container relative inline-block whitespace-nowrap">
+                Sourav Ganguly
+                <svg
+                  className="absolute -bottom-2 left-0 w-full h-2.5"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 100 12"
+                >
+                  <path
+                    d="M0,9 Q50,1 100,7"
+                    fill="none"
+                    stroke="#fe6332"
+                    strokeLinecap="round"
+                    strokeWidth="4"
+                  ></path>
+                </svg>
+              </span>
+            </h2>
+            <p className="font-body-md text-body-md text-on-primary-container mt-4 leading-relaxed max-w-2xl mx-auto">
+              Acharya Defence Academy (ADAS) is officially certified and appreciated by educational technology leader Classplus and former Indian Cricket Team Captain Sourav Ganguly for innovative defence entrance coaching.
+            </p>
+          </div>
+
+          {/* Main 2-Column Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left: Luxury Framed Certificate Showcase */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div className="relative w-full max-w-[360px] md:max-w-[380px]">
+                {/* Outer Ambient Glow */}
+                <div className="absolute -inset-4 bg-secondary-container/20 blur-2xl rounded-3xl opacity-60"></div>
+
+                {/* Wooden / Gold Framed Canvas */}
+                <div className="relative rounded-2xl p-3 bg-gradient-to-br from-[#c89b3c] via-[#ecd89a] to-[#9a7228] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),0_0_25px_rgba(254,99,50,0.25)]">
+                  {/* Inner Dark Matting Border */}
+                  <div className="rounded-xl overflow-hidden bg-white p-1.5 shadow-inner relative">
+                    {/* Top Ribbon Seal Badge */}
+                    <div className="absolute top-3 right-3 z-20 bg-primary/95 text-secondary-container text-[11px] font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1 uppercase tracking-wider border border-secondary-container/30">
+                      <Icon name="workspace_premium" className="text-[14px] text-secondary-container" />
+                      <span>Certified Partner</span>
+                    </div>
+
+                    {/* Certificate Image */}
+                    <Image
+                      src={certificateClassplus}
+                      alt="Certificate of Association awarded to ADAS (Gateway to Sainik School) by Classplus and Sourav Ganguly"
+                      className="w-full h-auto object-contain rounded-lg block max-h-[480px]"
+                      priority
+                    />
+
+                    {/* Subtle Sheen / Glass Reflection Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20 pointer-events-none"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Endorsement Details & Credibility Points */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+              <div>
+                {/* Meta Badge Tags */}
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  <span className="px-3 py-1 rounded-md bg-secondary-container/20 text-secondary-container border border-secondary-container/30 text-xs font-bold tracking-wide uppercase">
+                    Classplus Certified Partner
+                  </span>
+                  <span className="px-3 py-1 rounded-md bg-primary-container text-on-primary-container border border-white/10 text-xs font-semibold">
+                    Strategic Endorsement
+                  </span>
+                  <span className="px-3 py-1 rounded-md bg-primary-container text-on-primary-container border border-white/10 text-xs font-semibold">
+                    Digital Pedagogy Leader
+                  </span>
+                </div>
+
+                <h3 className="font-headline-md text-headline-md text-white font-bold mb-3">
+                  Recognized for Educational Transformation &amp; Innovation
+                </h3>
+
+                {/* Quote Box from Certificate */}
+                <div className="relative bg-primary-container/70 border-l-4 border-secondary-container rounded-r-xl p-5 shadow-md backdrop-blur">
+                  <span className="material-symbols-outlined text-secondary-container/30 text-3xl absolute top-2 right-2 pointer-events-none">
+                    format_quote
+                  </span>
+                  <p className="font-body-md text-body-md text-on-primary italic leading-relaxed">
+                    &quot;This is to proudly appreciate <strong className="text-secondary-container font-semibold not-italic">ADAS (Gateway to Sainik School)</strong> for dedication to transforming education and empowering learners through innovation. We deeply appreciate your efforts and celebrate your journey.&quot;
+                  </p>
+                  <div className="mt-3 flex items-center justify-between flex-wrap gap-2 pt-2 border-t border-white/10">
+                    <span className="text-xs font-medium text-on-primary-container flex items-center gap-1">
+                      <Icon name="military_tech" className="text-secondary-container text-sm" />
+                      Signatories: <strong>Sourav Ganguly</strong>
+                    </span>
+
+                  </div>
+                </div>
+              </div>
+
+              {/* 3 Value Pillars */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="p-4 rounded-xl bg-primary-container/40 border border-white/10">
+                  <div className="w-9 h-9 rounded-lg bg-secondary-container/20 text-secondary-container flex items-center justify-center mb-2">
+                    <Icon name="workspace_premium" className="text-[20px]" />
+                  </div>
+                  <h4 className="font-title-sm text-title-sm text-white font-bold mb-1">
+                    Cricket Legend&apos;s Seal
+                  </h4>
+                  <p className="font-body-sm text-xs text-on-primary-container leading-relaxed">
+                    Endorsed by former Team India Captain Sourav Ganguly as a model juvenile coaching academy.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-primary-container/40 border border-white/10">
+                  <div className="w-9 h-9 rounded-lg bg-secondary-container/20 text-secondary-container flex items-center justify-center mb-2">
+                    <span className="material-symbols-outlined text-[20px] text-secondary-container">psychology</span>
+                  </div>
+                  <h4 className="font-title-sm text-title-sm text-white font-bold mb-1">
+                    Smart Learning
+                  </h4>
+                  <p className="font-body-sm text-xs text-on-primary-container leading-relaxed">
+                    Powered by cutting-edge digital test series, OMR analytics, and live remedial doubt tracking.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-primary-container/40 border border-white/10">
+                  <div className="w-9 h-9 rounded-lg bg-secondary-container/20 text-secondary-container flex items-center justify-center mb-2">
+                    <Icon name="school" className="text-[20px]" />
+                  </div>
+                  <h4 className="font-title-sm text-title-sm text-white font-bold mb-1">
+                    Western Odisha Pride
+                  </h4>
+                  <p className="font-body-sm text-xs text-on-primary-container leading-relaxed">
+                    Bringing metro-calibre entrance prep and military discipline right to Sambalpur.
+                  </p>
+                </div>
+              </div>
+
+              {/* Actions & Links */}
+              {/* <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-white/10">
+                <button
+                  type="button"
+                  onClick={() => setHeroEnquiryOpen(true)}
+                  className="inline-flex items-center gap-2 bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn px-7 py-3.5 rounded-full shadow-[0_6px_20px_0_rgba(241,90,41,0.35)] transition-all cursor-pointer font-bold"
+                >
+                  <span>Enquire for Admission</span>
+                  <Icon name="arrow_forward" className="text-[18px]" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCertificateModalOpen(true)}
+                  className="inline-flex items-center gap-2 text-white hover:text-secondary-container font-label-btn text-label-btn px-6 py-3.5 rounded-full bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 backdrop-blur transition-colors border border-white/15 cursor-pointer"
+                >
+                  <Icon name="auto_stories" className="text-[18px]" />
+                  <span>View Full Certificate</span>
+                </button>
+                <a
+                  className="inline-flex items-center gap-2 text-on-primary-container hover:text-white font-label-btn text-xs px-4 py-3 rounded-full hover:bg-white/5 transition-colors"
+                  href="tel:9149771961"
+                >
+                  <Icon name="call" className="text-[16px]" />
+                  <span>Helpline: 9149771961</span>
+                </a>
+              </div> */}
+            </div>
+          </div>
+        </div>
+
+      </section>
+
       {/* 6. HOW IT WORKS / ADMISSION ROADMAP */}
       <section className="w-full bg-surface-container py-space-xl">
         <div className="max-w-[1280px] mx-auto px-margin space-y-space-xl">
@@ -759,122 +956,74 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Achiever Arch Cards Carousel Grid */}
+          {/* Achiever Cards Carousel Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
             {/* Cadet 1 */}
-            <div className="bg-primary-container rounded-3xl p-5 shadow-lg flex flex-col items-center text-center relative group hover:-translate-y-1.5 transition-transform">
-              <div className="w-full h-56 rounded-t-[100px] rounded-b-xl overflow-hidden mb-4 relative bg-tertiary">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Young Indian cadet boy with sharp haircut and clean school uniform smiling proudly"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX0wT14BAmKxmEU2cZCfjodUmHD4QmUaFs7ESCMn1Z2V1eZJGzX_lF6sxDMgjYcnn2Nlokastq3PGvn8TddgDEfaasbCNvpuqRwkmtdt66giblgvJuA-63jmh00nYi9QaW3I1C0N-VaEsuKaWa5w1kPJsFColrU_Y-_8jupbNUA22fBO3VjQ8T6YkBoEBEbXwDZIL3C6Rtr8EPyrh3u1l6rrGm2F3yK3mEtrnu4xkb"
+            <div className="bg-primary-container rounded-3xl p-6 shadow-lg flex flex-col items-center text-center relative group hover:-translate-y-1.5 transition-transform">
+              <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-full overflow-hidden mb-4 relative bg-tertiary mx-auto border-4 border-secondary-container/20 shadow-md">
+                <Image
+                  src={student1}
+                  alt="Cadet Baibhav - Selection in New Sainik School Raipur"
+                  className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute top-2 right-2 bg-secondary text-on-secondary text-[11px] font-bold px-2.5 py-1 rounded-full uppercase">
-                  AIR 42
-                </div>
               </div>
-              <span className="font-caption text-caption text-secondary-container font-bold uppercase tracking-wider">
-                AISSEE 2024
-              </span>
-              <h3 className="font-title-lg text-title-lg text-on-primary mt-1">
-                Soumya Ranjan Dash
+              <h3 className="font-title-lg text-title-lg text-on-primary mt-1 font-bold">
+                Baibhav
               </h3>
-              <p className="font-body-sm text-body-sm text-on-primary-container">
-                Selected at Sainik School Bhubaneswar
+              <p className="font-body-sm text-body-sm text-on-primary-container mt-1">
+                Selected at New Sainik School Raipur
               </p>
-              <div className="mt-3 pt-3 w-full flex items-center justify-center gap-1 text-secondary-fixed">
-                <Icon name="military_tech" className="text-sm" />
-                <span className="font-caption text-caption">
-                  Sambalpur District Topper
-                </span>
-              </div>
             </div>
 
             {/* Cadet 2 */}
-            <div className="bg-primary-container rounded-3xl p-5 shadow-lg flex flex-col items-center text-center relative group hover:-translate-y-1.5 transition-transform">
-              <div className="w-full h-56 rounded-t-[100px] rounded-b-xl overflow-hidden mb-4 relative bg-tertiary">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Young Indian student girl in academy blazer holding laurels award"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFZtg5umyZvE-Bqo0L-mmCrs_7vuT1hUGfLNPJGFhEQTNK6ZiDLLdER5w8ZsKdwLba78HOoBbsjI9oPTyK7bboiBsGFqE0RIO1LwRJnbrtM54Oozg8joJItuEzAE5WU8mZfSsPTQrcGRPonF4wMxuZUIMCkpm7yMorWUg7ToBinFlrT0WK4mxz7etm-ZpXVKqZgTqdE89eKNLIxMpBOfJhZpY2ktGiAvAJglgMUEnl"
+            <div className="bg-primary-container rounded-3xl p-6 shadow-lg flex flex-col items-center text-center relative group hover:-translate-y-1.5 transition-transform">
+              <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-full overflow-hidden mb-4 relative bg-tertiary mx-auto border-4 border-secondary-container/20 shadow-md">
+                <Image
+                  src={student2}
+                  alt="Cadet Aryan - Selection in Sainik School Bhubaneswar"
+                  className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute top-2 right-2 bg-secondary text-on-secondary text-[11px] font-bold px-2.5 py-1 rounded-full uppercase">
-                  Qualified
-                </div>
               </div>
-              <span className="font-caption text-caption text-secondary-container font-bold uppercase tracking-wider">
-                AISSEE (Girls) 2024
-              </span>
-              <h3 className="font-title-lg text-title-lg text-on-primary mt-1">
-                Ananya Patel
+              <h3 className="font-title-lg text-title-lg text-on-primary mt-1 font-bold">
+                Aryan
               </h3>
-              <p className="font-body-sm text-body-sm text-on-primary-container">
-                Selected at Sainik School Sambalpur
+              <p className="font-body-sm text-body-sm text-on-primary-container mt-1">
+                Selected at Sainik School Bhubaneswar
               </p>
-              <div className="mt-3 pt-3 w-full flex items-center justify-center gap-1 text-secondary-fixed">
-                <Icon name="military_tech" className="text-sm" />
-                <span className="font-caption text-caption">
-                  Class VI Entrance Batch
-                </span>
-              </div>
             </div>
 
             {/* Cadet 3 */}
-            <div className="bg-primary-container rounded-3xl p-5 shadow-lg flex flex-col items-center text-center relative group hover:-translate-y-1.5 transition-transform">
-              <div className="w-full h-56 rounded-t-[100px] rounded-b-xl overflow-hidden mb-4 relative bg-tertiary">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Young Indian boy cadet standing upright in formal defence academy attire with golden badge"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhsT-GZBnpJQaTZPY84fQcJGTIFVgEijXnYtDjyJqd7R6PiNXTzdkVYiuLJvSqI1_TJIwYRw1cKUnTw9Y_7KbCS1__yBVdcXmQ78tyq7K-4GMNvYchC8w0NvdmRohebf5zgYiTDI8Oxu0lX_qfl8pmOf6is6P4ClKtzApcpI4VIOs1KdmLNnAH14sVHKAii_X3mpnMGLR1xaXgHV35Ua3dHsv_wEnmn037DFUYvul8"
+            <div className="bg-primary-container rounded-3xl p-6 shadow-lg flex flex-col items-center text-center relative group hover:-translate-y-1.5 transition-transform">
+              <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-full overflow-hidden mb-4 relative bg-tertiary mx-auto border-4 border-secondary-container/20 shadow-md">
+                <Image
+                  src={student3}
+                  alt="Cadet Rishab - Selection in Sainik School Sambalpur"
+                  className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute top-2 right-2 bg-secondary text-on-secondary text-[11px] font-bold px-2.5 py-1 rounded-full uppercase">
-                  RMS
-                </div>
               </div>
-              <span className="font-caption text-caption text-secondary-container font-bold uppercase tracking-wider">
-                RMS Belgaum
-              </span>
-              <h3 className="font-title-lg text-title-lg text-on-primary mt-1">
-                Debabrata Nayak
+              <h3 className="font-title-lg text-title-lg text-on-primary mt-1 font-bold">
+                Rishab
               </h3>
-              <p className="font-body-sm text-body-sm text-on-primary-container">
-                Selected at Rashtriya Military School
+              <p className="font-body-sm text-body-sm text-on-primary-container mt-1">
+                Selected at Sainik School Sambalpur
               </p>
-              <div className="mt-3 pt-3 w-full flex items-center justify-center gap-1 text-secondary-fixed">
-                <Icon name="military_tech" className="text-sm" />
-                <span className="font-caption text-caption">
-                  Jharsuguda Center
-                </span>
-              </div>
             </div>
 
             {/* Cadet 4 */}
-            <div className="bg-primary-container rounded-3xl p-5 shadow-lg flex flex-col items-center text-center relative group hover:-translate-y-1.5 transition-transform">
-              <div className="w-full h-56 rounded-t-[100px] rounded-b-xl overflow-hidden mb-4 relative bg-tertiary">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Young energetic Indian student in formal school uniform holding study books"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkuwBQTr73EekdsgxpLQDA2Vat1z9-49P3f2fgto3DD73nlW95YJV9kY0jlXjngNUsTfd-s7nwhrNEWsJFZX976NIHOyQsoHRmuzuJyh7amC7-lSIsFqK6MCUtKuCyh31JG5-387o6sBCQbhcPJEXgHnmuwbrBHV_36bF3uGk1Hqkq0r5XMSqtHaa0mD8NAzdxQIFF73maP-jwvkakHJ2FxdKtwocK8nlIAN4cRrds"
+            <div className="bg-primary-container rounded-3xl p-6 shadow-lg flex flex-col items-center text-center relative group hover:-translate-y-1.5 transition-transform">
+              <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-full overflow-hidden mb-4 relative bg-tertiary mx-auto border-4 border-secondary-container/20 shadow-md">
+                <Image
+                  src={student4}
+                  alt="Cadet Manish - Selection in Sainik School Sambalpur"
+                  className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute top-2 right-2 bg-secondary text-on-secondary text-[11px] font-bold px-2.5 py-1 rounded-full uppercase">
-                  JNVST
-                </div>
               </div>
-              <span className="font-caption text-caption text-secondary-container font-bold uppercase tracking-wider">
-                JNV Selection 2024
-              </span>
-              <h3 className="font-title-lg text-title-lg text-on-primary mt-1">
-                Priyanshu Pradhan
+              <h3 className="font-title-lg text-title-lg text-on-primary mt-1 font-bold">
+                Manish
               </h3>
-              <p className="font-body-sm text-body-sm text-on-primary-container">
-                Selected at JNV Gosala, Sambalpur
+              <p className="font-body-sm text-body-sm text-on-primary-container mt-1">
+                Selected at Sainik School Sambalpur
               </p>
-              <div className="mt-3 pt-3 w-full flex items-center justify-center gap-1 text-secondary-fixed">
-                <Icon name="military_tech" className="text-sm" />
-                <span className="font-caption text-caption">
-                  100% Scholarship Recipient
-                </span>
-              </div>
             </div>
           </div>
         </div>
@@ -897,25 +1046,34 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-stretch">
             {/* Main 16:9 Video Presentation Frame */}
-            <div className="lg:col-span-8 bg-surface-container-lowest rounded-3xl overflow-hidden shadow-xl relative min-h-[360px] sm:min-h-[420px] flex items-center justify-center group">
-              <img
+            <div
+              className="lg:col-span-8 bg-surface-container-lowest rounded-3xl overflow-hidden shadow-xl relative min-h-[360px] sm:min-h-[420px] flex items-center justify-center group cursor-pointer"
+              onClick={() => setVideoModalOpen(true)}
+            >
+              <video
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                alt="Wide perspective shot of motivated Indian cadets in identical academy shirts standing in synchronized lines"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr7J1ReQUrPEhRRHHuWl-VpK6CjvNRIDnR73YTH0gd2NuO08HMTk_c7wu1R7he8d_xKZ3t0EgA9M91zgYIPEJPNsaFXKPV_3jQwkU0eXWB8-sIvuiZLu5AW9j-aiKY0JVScYY7qOvY3PTlGZXNp-XsPGSdJrHBunikmyB4TnWm_EM7PZr1b5ItOGMOYqRXnGUcC6PAFr5vE-UpafjiXKsoqZxcRY84fwDqZzhvWZYM"
+                src="/assets/herovideo.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
               />
               <div className="absolute inset-0 bg-primary/40 backdrop-blur-[1px]"></div>
 
               {/* Play Trigger Button */}
               <button
                 type="button"
-                className="relative z-10 w-20 h-20 rounded-full bg-secondary-container hover:bg-secondary text-on-secondary shadow-[0_6px_25px_0_rgba(254,99,50,0.5)] flex items-center justify-center hover:scale-110 transition-transform"
-                onClick={() => alert("Campus tour video playing soon! Visit our campus in Sambalpur for a live walkthrough.")}
+                className="relative z-10 w-20 h-20 rounded-full bg-secondary-container hover:bg-secondary text-on-secondary shadow-[0_6px_25px_0_rgba(254,99,50,0.5)] flex items-center justify-center hover:scale-110 transition-transform cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setVideoModalOpen(true);
+                }}
                 aria-label="Play Campus Tour Video"
               >
                 <Icon name="play_arrow" className="text-[36px] ml-1" />
               </button>
 
-              <div className="absolute bottom-6 left-6 right-6 z-10 flex items-center justify-between text-on-primary">
+              <div className="absolute bottom-6 left-6 right-6 z-10 flex items-center justify-between text-on-primary pointer-events-none">
                 <div>
                   <p className="font-title-md text-title-md font-bold">
                     A Day in the Life of an ADAS Cadet
@@ -924,19 +1082,16 @@ export default function Home() {
                     Watch campus tour, drill sessions, and teacher reviews
                   </p>
                 </div>
-                <span className="bg-primary/70 backdrop-blur-md px-3 py-1 rounded-full font-caption text-caption">
-                  03:45 MIN
-                </span>
               </div>
             </div>
 
             {/* 2 Stacked Lateral Campus Cards */}
             <div className="lg:col-span-4 flex flex-col gap-space-md">
               <div className="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-md flex-1 relative group">
-                <img
+                <Image
+                  src={smartClassroom}
+                  alt="Students attending an interactive smart classroom session at Acharya Defence Academy"
                   className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
-                  alt="Indian students solving mathematical geometry problems on interactive whiteboards"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8AJnshqaLPLognUIc2kPsePKHBYknmlxzTSSxaphildy53gWwIFKSI-o1tSBZQpyLHoUWsuJUrnL3qkfwe0lg99smhe6Tv1HV9FvT2GGmlHjjzh3aEZOBjmIZjR-5jYtsPIl4Wst8_meEMkJ_CUibLfDXAGtbf398OjPQMBqtL-ZpQSLDkffNOr4gQRAYtc3FYWlnt5cR_l9gnDc3f-fDFZIQMLV3EtybIe2Q1f_8"
                 />
                 <div className="p-5 space-y-1">
                   <span className="font-caption text-caption text-secondary font-bold uppercase tracking-wider">
@@ -1023,113 +1178,113 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto space-y-space-md">
 
-              {/* FAQ Items */}
-              <div className="space-y-space-sm" id="faqAccordion">
-                {/* FAQ 1 */}
-                <details
-                  className="group bg-surface-container-low rounded-2xl p-5 cursor-pointer shadow-sm"
-                  open={openFaq === 0}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleFaq(0);
-                  }}
-                >
-                  <summary className="flex items-center justify-between font-title-md text-title-md text-primary font-semibold list-none">
-                    <span>What is the eligibility age for Sainik School (AISSEE) Class VI?</span>
-                    <Icon name="expand_more" className={`text-secondary transition-transform duration-200 ${openFaq === 0 ? "rotate-180" : ""
-                      }`} />
-                  </summary>
-                  {openFaq === 0 && (
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
-                      Candidates must be between 10 and 12 years of age as of March 31st of the admission year. Both boys and girls are eligible to apply for Class VI admission across all Sainik Schools nationwide.
-                    </p>
-                  )}
-                </details>
+            {/* FAQ Items */}
+            <div className="space-y-space-sm" id="faqAccordion">
+              {/* FAQ 1 */}
+              <details
+                className="group bg-surface-container-low rounded-2xl p-5 cursor-pointer shadow-sm"
+                open={openFaq === 0}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleFaq(0);
+                }}
+              >
+                <summary className="flex items-center justify-between font-title-md text-title-md text-primary font-semibold list-none">
+                  <span>What is the eligibility age for Sainik School (AISSEE) Class VI?</span>
+                  <Icon name="expand_more" className={`text-secondary transition-transform duration-200 ${openFaq === 0 ? "rotate-180" : ""
+                    }`} />
+                </summary>
+                {openFaq === 0 && (
+                  <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
+                    Candidates must be between 10 and 12 years of age as of March 31st of the admission year. Both boys and girls are eligible to apply for Class VI admission across all Sainik Schools nationwide.
+                  </p>
+                )}
+              </details>
 
-                {/* FAQ 2 */}
-                <details
-                  className="group bg-surface-container-low rounded-2xl p-5 cursor-pointer shadow-sm"
-                  open={openFaq === 1}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleFaq(1);
-                  }}
-                >
-                  <summary className="flex items-center justify-between font-title-md text-title-md text-primary font-semibold list-none">
-                    <span>Do you offer safe hostel accommodation for outstation students?</span>
-                    <Icon name="expand_more" className={`text-secondary transition-transform duration-200 ${openFaq === 1 ? "rotate-180" : ""
-                      }`} />
-                  </summary>
-                  {openFaq === 1 && (
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
-                      Yes. ADAS provides fully disciplined hostel facilities with nutritious meals, round-the-clock wardens, mandatory morning physical fitness sessions, and structured evening self-study hours under teacher supervision.
-                    </p>
-                  )}
-                </details>
+              {/* FAQ 2 */}
+              <details
+                className="group bg-surface-container-low rounded-2xl p-5 cursor-pointer shadow-sm"
+                open={openFaq === 1}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleFaq(1);
+                }}
+              >
+                <summary className="flex items-center justify-between font-title-md text-title-md text-primary font-semibold list-none">
+                  <span>Do you offer safe hostel accommodation for outstation students?</span>
+                  <Icon name="expand_more" className={`text-secondary transition-transform duration-200 ${openFaq === 1 ? "rotate-180" : ""
+                    }`} />
+                </summary>
+                {openFaq === 1 && (
+                  <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
+                    Yes. ADAS provides fully disciplined hostel facilities with nutritious meals, round-the-clock wardens, mandatory morning physical fitness sessions, and structured evening self-study hours under teacher supervision.
+                  </p>
+                )}
+              </details>
 
-                {/* FAQ 3 */}
-                <details
-                  className="group bg-surface-container-low rounded-2xl p-5 cursor-pointer shadow-sm"
-                  open={openFaq === 2}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleFaq(2);
-                  }}
-                >
-                  <summary className="flex items-center justify-between font-title-md text-title-md text-primary font-semibold list-none">
-                    <span>What is the medium of instruction at Acharya Defence Academy?</span>
-                    <Icon name="expand_more" className={`text-secondary transition-transform duration-200 ${openFaq === 2 ? "rotate-180" : ""
-                      }`} />
-                  </summary>
-                  {openFaq === 2 && (
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
-                      Instruction is bilingual in English and Odia/Hindi to make foundational concepts crystal clear, while test materials and mock exams follow the strictly standardized English medium exam format.
-                    </p>
-                  )}
-                </details>
+              {/* FAQ 3 */}
+              <details
+                className="group bg-surface-container-low rounded-2xl p-5 cursor-pointer shadow-sm"
+                open={openFaq === 2}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleFaq(2);
+                }}
+              >
+                <summary className="flex items-center justify-between font-title-md text-title-md text-primary font-semibold list-none">
+                  <span>What is the medium of instruction at Acharya Defence Academy?</span>
+                  <Icon name="expand_more" className={`text-secondary transition-transform duration-200 ${openFaq === 2 ? "rotate-180" : ""
+                    }`} />
+                </summary>
+                {openFaq === 2 && (
+                  <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
+                    Instruction is bilingual in English and Odia/Hindi to make foundational concepts crystal clear, while test materials and mock exams follow the strictly standardized English medium exam format.
+                  </p>
+                )}
+              </details>
 
-                {/* FAQ 4 */}
-                <details
-                  className="group bg-surface-container-low rounded-2xl p-5 cursor-pointer shadow-sm"
-                  open={openFaq === 3}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleFaq(3);
-                  }}
-                >
-                  <summary className="flex items-center justify-between font-title-md text-title-md text-primary font-semibold list-none">
-                    <span>Is there an admission scholarship test at ADAS Sambalpur?</span>
-                    <Icon name="expand_more" className={`text-secondary transition-transform duration-200 ${openFaq === 3 ? "rotate-180" : ""
-                      }`} />
-                  </summary>
-                  {openFaq === 3 && (
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
-                      Yes! We conduct the ADAS Talent Hunt &amp; Diagnostic Test periodically. Meritorious students and children of defence/police personnel receive up to 50% tuition fee concessions.
-                    </p>
-                  )}
-                </details>
+              {/* FAQ 4 */}
+              <details
+                className="group bg-surface-container-low rounded-2xl p-5 cursor-pointer shadow-sm"
+                open={openFaq === 3}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleFaq(3);
+                }}
+              >
+                <summary className="flex items-center justify-between font-title-md text-title-md text-primary font-semibold list-none">
+                  <span>Is there an admission scholarship test at ADA Sambalpur?</span>
+                  <Icon name="expand_more" className={`text-secondary transition-transform duration-200 ${openFaq === 3 ? "rotate-180" : ""
+                    }`} />
+                </summary>
+                {openFaq === 3 && (
+                  <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
+                    Yes! We conduct the ADAS Talent Hunt &amp; Diagnostic Test periodically. Meritorious students and children of defence/police personnel receive up to 50% tuition fee concessions.
+                  </p>
+                )}
+              </details>
 
-                {/* FAQ 5 */}
-                <details
-                  className="group bg-surface-container-low rounded-2xl p-5 cursor-pointer shadow-sm"
-                  open={openFaq === 4}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleFaq(4);
-                  }}
-                >
-                  <summary className="flex items-center justify-between font-title-md text-title-md text-primary font-semibold list-none">
-                    <span>How many mock tests are conducted before the real AISSEE/RMS exam?</span>
-                    <Icon name="expand_more" className={`text-secondary transition-transform duration-200 ${openFaq === 4 ? "rotate-180" : ""
-                      }`} />
-                  </summary>
-                  {openFaq === 4 && (
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
-                      We conduct over 45 full-syllabus mock tests with authentic carbon-copy OMR sheets, followed by immediate error analysis sheets so students continuously overcome timing mistakes.
-                    </p>
-                  )}
-                </details>
-              </div>
+              {/* FAQ 5 */}
+              <details
+                className="group bg-surface-container-low rounded-2xl p-5 cursor-pointer shadow-sm"
+                open={openFaq === 4}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleFaq(4);
+                }}
+              >
+                <summary className="flex items-center justify-between font-title-md text-title-md text-primary font-semibold list-none">
+                  <span>How many mock tests are conducted before the real AISSEE/RMS exam?</span>
+                  <Icon name="expand_more" className={`text-secondary transition-transform duration-200 ${openFaq === 4 ? "rotate-180" : ""
+                    }`} />
+                </summary>
+                {openFaq === 4 && (
+                  <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
+                    We conduct over 45 full-syllabus mock tests with authentic carbon-copy OMR sheets, followed by immediate error analysis sheets so students continuously overcome timing mistakes.
+                  </p>
+                )}
+              </details>
+            </div>
 
             {/* Right 5 Cols: Floating High-Conversion Navy Card */}
             {/* <CallbackCard /> */}
@@ -1137,6 +1292,11 @@ export default function Home() {
         </div>
       </section>
       <EnquiryModal open={heroEnquiryOpen} onClose={() => setHeroEnquiryOpen(false)} />
+      <VideoModal
+        open={videoModalOpen}
+        onClose={() => setVideoModalOpen(false)}
+        videoSrc="/assets/herovideo.mp4"
+      />
     </div>
   );
 }

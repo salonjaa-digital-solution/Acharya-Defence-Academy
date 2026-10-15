@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CampusVisitActions from "@/components/CampusVisitActions";
+import Image from "next/image";
+import directorImg from "@/assets/Director-ADAS.png";
+import smartClassroom from "@/assets/smart.jpeg";
+import obstacleGround from "@/assets/obstacle-ground.webp";
+import libraryStudyHall from "@/assets/library-study-hall.webp";
+import cadetDormitory from "@/assets/cadet-dormitory.webp";
+import genesisCampus from "@/assets/genesis-campus.webp";
 
 export const metadata: Metadata = {
   title: "About Us | Acharya Defence Academy (ADAS), Sambalpur",
@@ -142,56 +148,39 @@ export default function AboutPage() {
         <div className="max-w-[1240px] mx-auto px-margin-sm lg:px-margin">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
             {/* Visual Column */}
-            <div className="lg:col-span-6 relative flex flex-col gap-space-md">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl bg-surface-container">
-                <img
-                  className="w-full h-[380px] object-cover"
-                  data-alt="Young Indian students in smart military school uniforms standing disciplined at morning assembly prayer with national pride in Sambalpur Odisha against clean academy building, warm golden morning sun, crisp editorial lighting"
-                  alt="Cadets morning assembly at Parvati Vihar Campus"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwNo3IZy_h_VIAc5XHar06gRHFBRgEW_lyGz5aauFxrI93NPWH7odhFqa_fXBZ98hGTakScw3SBK_FHDXUZo7Q4_jS5ZeqDzaWUSgFZu5bq0sjEjTs6Fxi4l1qA2WpgJsHJKfCaVqLIm6fy3C4wCkCXi-5hJF-TTNSDJ3i1p17mKld-iB11MUNCfvlD1qucQ_He9NQzlrCv4z2CNxQLVR2fBorZOJyIhwFZUJAgA"
+            <div className="lg:col-span-6 relative pb-6 lg:pb-0">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl bg-surface-container aspect-[4/3] sm:h-[400px]">
+                <Image
+                  src={genesisCampus}
+                  alt="Cadets assembly in front of academy campus in Sambalpur with Indian flag"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
                 />
-                <div className="absolute bottom-4 left-4 right-4 bg-primary-container/90 backdrop-blur-md p-space-sm rounded-xl text-on-primary flex items-center justify-between">
-                  <div className="flex items-center gap-space-xs">
-                    <span className="material-symbols-outlined text-tertiary-fixed text-[24px]">
-                      verified
-                    </span>
-                    <div>
-                      <p className="font-label-md text-label-md leading-tight text-on-primary">
-                        Parvati Vihar Campus
-                      </p>
-                      <p className="font-body-sm text-body-sm text-primary-fixed-dim">
-                        Dhankauda, Sambalpur
-                      </p>
-                    </div>
-                  </div>
-                  <span className="font-label-sm text-label-sm px-2.5 py-1 bg-surface-container-lowest/15 rounded-full text-on-primary">
-                    Estd. 2018
+                <div className="absolute top-3 left-3 bg-primary/85 backdrop-blur-md px-3.5 py-1.5 rounded-full text-on-primary flex items-center gap-2 border border-white/10 shadow-lg">
+                  <span className="material-symbols-outlined text-secondary-container text-[16px]">
+                    verified
+                  </span>
+                  <span className="font-caption text-caption text-on-primary font-semibold">
+                    Dhankauda Campus • Estd. 2018
                   </span>
                 </div>
               </div>
-              {/* Overlapping Secondary Asset */}
-              <div className="grid grid-cols-2 gap-space-sm -mt-6 ml-4">
-                <div className="rounded-xl overflow-hidden shadow-lg bg-surface-container-high">
-                  <img
-                    className="w-full h-36 object-cover"
-                    data-alt="Indian youth cadets undergoing rigorous physical obstacle drill training on modern obstacle course field, coach observing in sports uniform, sunny afternoon in Odisha"
-                    alt="Cadets physical drill training"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn7HHn1lpFvSTVk3ky74CdApIjcNV5a4TOYeqrVmD71z_ppGNatIOYr9loFQaloKoK-5_Df3-uorCvlhC8seb5Amnpy6ZFzTmQBjWBwwsykR_t-S8fXIHJwW44sBMBL7S1W5s6Zgb6Cg4kKk1Q0-SZnFcCpeAr1ySFuUo8S83SuEUNMyfTZf1E7Ae1HufMrAbdNYrsT1af-hAxK-XYH-Pqaa-WvYC-vvmOkJeZ0A"
-                  />
+
+              {/* Floating Small Badge */}
+              <div className="absolute -bottom-4 sm:-bottom-5 left-4 sm:left-6 bg-surface-container-lowest/95 backdrop-blur-md text-on-surface p-3 rounded-xl shadow-xl border border-secondary-container/20 flex items-center gap-space-sm max-w-[220px] z-10">
+                <div className="w-10 h-10 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center shrink-0">
+                  <span className="material-symbols-outlined text-[22px]">
+                    workspace_premium
+                  </span>
                 </div>
-                <div className="bg-primary p-space-md rounded-xl text-on-primary shadow-lg flex flex-col justify-center">
-                  <div className="flex items-center text-tertiary-fixed gap-1 mb-1">
-                    <span className="material-symbols-outlined text-[18px]">star</span>
-                    <span className="material-symbols-outlined text-[18px]">star</span>
-                    <span className="material-symbols-outlined text-[18px]">star</span>
-                    <span className="material-symbols-outlined text-[18px]">star</span>
-                    <span className="material-symbols-outlined text-[18px]">star</span>
-                  </div>
-                  <p className="font-headline-sm text-headline-sm leading-tight text-on-primary">
-                    Western Odisha&apos;s
+                <div>
+                  <p className="font-title-md text-title-md font-bold text-primary leading-tight">
+                    148+ Cadets
                   </p>
-                  <p className="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider">
-                    Foremost Defence Academy
+                  <p className="font-caption text-caption text-on-surface-variant leading-tight">
+                    Selected into AISSEE &amp; RMS
                   </p>
                 </div>
               </div>
@@ -227,34 +216,6 @@ export default function AboutPage() {
                 time-tested discipline of Indian military culture—training not just
                 candidate examinees, but the future officers of our Armed Forces.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm w-full pt-space-xs">
-                <div className="p-space-sm bg-surface-container-low rounded-xl flex items-start gap-space-xs">
-                  <span className="material-symbols-outlined text-secondary text-[24px] mt-0.5">
-                    school
-                  </span>
-                  <div>
-                    <p className="font-label-md text-label-md text-primary">
-                      Uncompromising Pedagogy
-                    </p>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant">
-                      Daily OMR drills and micro-concept testing.
-                    </p>
-                  </div>
-                </div>
-                <div className="p-space-sm bg-surface-container-low rounded-xl flex items-start gap-space-xs">
-                  <span className="material-symbols-outlined text-secondary text-[24px] mt-0.5">
-                    shield
-                  </span>
-                  <div>
-                    <p className="font-label-md text-label-md text-primary">
-                      Safe Residential Campus
-                    </p>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant">
-                      Round-the-clock wardens, CCTV, and regimented hours.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -346,14 +307,39 @@ export default function AboutPage() {
         <div className="max-w-[1240px] mx-auto px-margin-sm lg:px-margin">
           <div className="bg-primary rounded-3xl text-on-primary p-space-lg lg:p-space-xl shadow-xl overflow-hidden relative">
             <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-surface-container-highest/10 blur-3xl pointer-events-none"></div>
-            <div className="relative z-10">
-              {/* Message & Philosophy */}
-              <div className="flex flex-col gap-space-md">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Founder Image & Credentials (Left Side) */}
+              <div className="lg:col-span-5 flex flex-col items-center text-center">
+                <div className="relative w-full max-w-[320px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-primary-container">
+                  <Image
+                    src={directorImg}
+                    alt="Himanshu Sekhar Acharya - Founder & Academic Director"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 320px"
+                    priority
+                  />
+                </div>
+                <div className="mt-4 space-y-1">
+                  <h3 className="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tight">
+                    Himanshu Sekhar Acharya
+                  </h3>
+                  <p className="font-label-md text-label-md text-tertiary-fixed font-semibold">
+                    Founder &amp; Academic Director
+                  </p>
+                  <p className="font-body-sm text-body-sm text-primary-fixed-dim">
+                    Acharya Defence Academy, Sambalpur
+                  </p>
+                </div>
+              </div>
+
+              {/* Message & Philosophy (Right Side) */}
+              <div className="lg:col-span-7 flex flex-col gap-space-md">
                 <div className="inline-flex items-center gap-space-xs text-tertiary-fixed">
                   <span className="material-symbols-outlined text-[36px]">
                     format_quote
                   </span>
-                  <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim">
+                  <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim font-bold">
                     From the Desk of the Director
                   </span>
                 </div>
@@ -365,30 +351,6 @@ export default function AboutPage() {
                   being ordinary pupils. They become the vanguard of national
                   pride.&rdquo;
                 </blockquote>
-                {/*                 <p className="font-body-md text-body-md text-primary-fixed-dim leading-relaxed">
-                  Every parent who leaves their child at our Dhankauda boarding
-                  house places sacred faith in us. We honor that faith by ensuring
-                  no distraction enters their life, every mistake is treated as a
-                  coaching diagnostic, and each cadet is nurtured into an upright
-                  scholar ready to ace national boards with distinction.
-                </p> */}
-                <div>
-                  <h3 className="font-headline-md text-headline-md text-on-primary tracking-tight">
-                    Himanshu Sekhar Acharya
-                  </h3>
-                  <p className="font-label-md text-label-md text-tertiary-fixed">
-                    Founder &amp; Academic Director
-                  </p>
-                  <p className="font-body-sm text-body-sm text-primary-fixed-dim mt-1">
-                    Acharya Defence Academy, Sambalpur
-                  </p>
-                </div>
-                <div className="flex items-center gap-space-md pt-space-xs">
-                  <div className="w-10 h-0.5 bg-tertiary-fixed"></div>
-                  <span className="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest">
-                    Duty &bull; Honor &bull; Scholarship
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -636,11 +598,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
             {/* Feature 1: Smart Classrooms (Large tile) */}
             <div className="md:col-span-2 lg:col-span-2 relative rounded-2xl overflow-hidden shadow-sm group min-h-[300px]">
-              <img
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                data-alt="Modern Indian preparatory smart classroom with digital interactive board, attentive young students sitting at desks in neat uniform uniforms, teacher instructing mathematics in Sambalpur academy"
-                alt="Smart interactive classroom"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp2uQcmK5d5NQzgU7jREcWxMvGsZCzF5msq3etm7OZX9QeoyJqhaamTRdpaPyJQWixoCAkfb_WiLE6Z9-zsxmydnqXP_KjCKamLu0RrxD-1rfY8e1MnnE2CB4SgIwXLRzZ0aywoiOt4GUXxMt03_EdOijFjGsEvPC_Yf5HSRcViIslXrusmj-VRyFU8onu40rpz9TwK-fkpJBBmqOUpfOir-D8m6SufIeNC23yxA"
+              <Image
+                src={smartClassroom}
+                alt="Smart Interactive Classrooms"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent p-space-md flex flex-col justify-end">
                 <span className="font-label-sm text-label-sm text-tertiary-fixed uppercase tracking-wider">
@@ -657,11 +620,12 @@ export default function AboutPage() {
             </div>
             {/* Feature 2: Obstacle Ground */}
             <div className="md:col-span-1 lg:col-span-2 relative rounded-2xl overflow-hidden shadow-sm group min-h-[300px]">
-              <img
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                data-alt="Outdoor military obstacle drill ground with rope climbing, hurdles, running tracks and morning mist with young cadets training under guidance of retired drill master in Sambalpur"
-                alt="Physical obstacle drill ground"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2TN9h7QEVmvXlKLVu99gy0yHjxoeqhvk4Z79Frnv4L83pNZ0k4MF6xVH03751wGz2s-pnWqFos79uwFcgyYm5Cq9rriOXSHVDxGjbY5EIDfW2JZZOQhnLHnyZgnX48cbmkJLXXeSWYZt5JerbauGzDn1wJRUexkqO62S0Dvb_1sL4hXmL7SYTDWUFJM-RljpzXHRfxnphdcQHeGR1uABzNFxQxRn1T1VdFa7_Jw"
+              <Image
+                src={obstacleGround}
+                alt="Physical Obstacle Drill Ground"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent p-space-md flex flex-col justify-end">
                 <span className="font-label-sm text-label-sm text-tertiary-fixed uppercase tracking-wider">
@@ -678,11 +642,12 @@ export default function AboutPage() {
             </div>
             {/* Feature 3: Library & Study Hall */}
             <div className="md:col-span-1 lg:col-span-2 relative rounded-2xl overflow-hidden shadow-sm group min-h-[260px]">
-              <img
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                data-alt="Quiet disciplined academy study hall and library with wooden desks, bookshelves filled with defence entrance prep books, cadets reading peacefully in warm lighting"
-                alt="Reference library and study hall"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnCsEqavfi3fmLow617UvyPARMYYg2dZAKft5Ije6WfK1JBaOwG261OYFTfQvfPLVM2sVG7XoI5XsPxQ8P91twTNl3YS4b3SHTqIvBnOKV1XNrH8-aIeDDNM2opDlQtuJllJKAV5QjDXi6AGQEuVqRnuonWEJpXaC5XuIAqNfDd6rMlS-OH-LOf7a84wrE1NVrdI62w2dOwQfFDUoL8MNhqqOuhuZ23z0_Ld1G4A"
+              <Image
+                src={libraryStudyHall}
+                alt="Reference Library & Study Hall"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent p-space-md flex flex-col justify-end">
                 <span className="font-label-sm text-label-sm text-tertiary-fixed uppercase tracking-wider">
@@ -699,11 +664,12 @@ export default function AboutPage() {
             </div>
             {/* Feature 4: Safe Residential Hostel */}
             <div className="md:col-span-2 lg:col-span-2 relative rounded-2xl overflow-hidden shadow-sm group min-h-[260px]">
-              <img
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                data-alt="Immaculate clean hostel dormitory room with neatly made military style bunk beds, cadet study desks, lockers, bright clean windows, residential boarding school interior in Odisha"
-                alt="Supervised cadet dormitories"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIxJE9tU4O1n7_-vU7q7Q9BpnUguR210gns6IdJWrTI5J1bC6HymxfO3dIWasd00tH97tglfiyEtJnEq5szVFzupOgO5miUJGlRbcLjlbPmLIa_LU44suDw4jNAqQCRrW2-4b8CfvZwNllmbgUf-jIkVDVDF35OeeuxarMKO67HU_xCqSPTFBdxQjDsvfxPfu2mT3EDffXFRbM3bwgsdoLzMGQYMhIC1hsvd1xZw"
+              <Image
+                src={cadetDormitory}
+                alt="Supervised Cadet Dormitories"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent p-space-md flex flex-col justify-end">
                 <span className="font-label-sm text-label-sm text-tertiary-fixed uppercase tracking-wider">
@@ -718,45 +684,6 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. CAMPUS VISIT CTA BAND */}
-      <section className="w-full bg-primary-container text-on-primary py-space-xl lg:py-20 relative overflow-hidden">
-        <div className="absolute -left-20 -top-20 w-80 h-80 rounded-full bg-surface-container-highest/10 blur-3xl pointer-events-none"></div>
-        <div className="max-w-[1240px] mx-auto px-margin-sm lg:px-margin relative z-10">
-          <div className="bg-surface-container-lowest/5 rounded-3xl p-space-lg lg:p-space-xl backdrop-blur-md flex flex-col lg:flex-row items-center justify-between gap-gutter">
-            <div className="space-y-space-sm max-w-2xl">
-              <div className="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-tertiary-container text-tertiary-fixed">
-                <span className="material-symbols-outlined text-[18px]">
-                  door_front
-                </span>
-                <span className="font-label-sm text-label-sm uppercase tracking-wider">
-                  Open Door Policy for Parents
-                </span>
-              </div>
-              <h2 className="font-headline-lg text-headline-lg text-on-primary tracking-tight">
-                Visit Our Sambalpur Campus
-              </h2>
-              <p className="font-body-lg text-body-lg text-primary-fixed-dim">
-                Experience the disciplined environment firsthand. Walk through our
-                classrooms, meet faculty mentors, and observe our daily cadet
-                drill.
-              </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-space-md text-primary-fixed-dim font-body-sm text-body-sm pt-space-xs">
-                <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-tertiary-fixed text-[20px]">
-                    location_on
-                  </span>
-                  <span>
-                    Near City Railway Station, Parvati Vihar, Dhankauda,
-                    Sambalpur, Odisha
-                  </span>
-                </div>
-              </div>
-            </div>
-            <CampusVisitActions />
           </div>
         </div>
       </section>
