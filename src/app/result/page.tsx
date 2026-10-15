@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import EnquiryModal from "@/components/EnquiryModal";
 import {
   cadetSaksham,
   cadetAnshuman,
@@ -380,9 +381,131 @@ const ADDITIONAL_CADETS: Cadet[] = [
   },
 ];
 
+interface ReviewItem {
+  quote: string;
+  name: string;
+  role: string;
+  initials: string;
+  avatarBg: string;
+}
+
+const TOP_REVIEWS: ReviewItem[] = [
+  {
+    quote:
+      "Coming from Bargarh, we were worried about hostel discipline. But ADAS mentors treated my son like family. The daily speed math drills gave him the confidence to crack AISSEE with 279 marks.",
+    name: "Bhabani S. Patel",
+    role: "Father of Ananya • Bargarh, Odisha",
+    initials: "BP",
+    avatarBg: "bg-secondary-container text-on-secondary",
+  },
+  {
+    quote:
+      "No other coaching in Western Odisha has this kind of mock-test discipline. They conducted 45 full-length OMR exams before the real test. My son didn’t panic even for a second.",
+    name: "Kamal Lochan Nayak",
+    role: "Father of Debabrata • Jharsuguda",
+    initials: "KN",
+    avatarBg: "bg-primary text-on-primary",
+  },
+  {
+    quote:
+      "ADAS Academy in Sambalpur gave my son the premier entrance learning experience! The disciplined mock test training and OMR drills removed all exam fear. Teachers give dedicated personal guidance.",
+    name: "Ashok Vangallu",
+    role: "Father of Cadet Anmol • Bargarh",
+    initials: "AV",
+    avatarBg: "bg-secondary text-on-secondary",
+  },
+  {
+    quote:
+      "ADAS is a perfect place for quality learning and discipline. The mentors are very supportive and explain all topics with unyielding clarity. I am completely satisfied with my daughter's transformation.",
+    name: "Priyamini Gurrala",
+    role: "Mother of Cadet Swati • Jharsuguda",
+    initials: "PG",
+    avatarBg: "bg-primary-container text-on-primary",
+  },
+  {
+    quote:
+      "Sending our child from Rourkela to Sambalpur was the best decision. The disciplined hostel routine and daily doubt-clearing sessions made all the difference in his AISSEE top-rank selection.",
+    name: "Rajesh Mohanty",
+    role: "Father of Cadet Soumya • Rourkela",
+    initials: "RM",
+    avatarBg: "bg-secondary-fixed-dim text-primary",
+  },
+];
+
+const BOTTOM_REVIEWS: ReviewItem[] = [
+  {
+    quote:
+      "The faculty in Sambalpur gave extra attention to reasoning and interview grooming. Getting into RMS Chail was a distant dream until ADAS provided the exact roadmap.",
+    name: "Suresh Chandra Meher",
+    role: "Father of Ashutosh • Sambalpur",
+    initials: "SM",
+    avatarBg: "bg-secondary-fixed text-on-secondary-fixed",
+  },
+  {
+    quote:
+      "I had a wonderful experience at ADAS Academy. The trainers explain concepts patiently and clearly. The institute atmosphere motivates students to learn more and achieve excellence in defence school exams.",
+    name: "Guna Sekhar",
+    role: "Father of Cadet Tarun • Sambalpur",
+    initials: "GS",
+    avatarBg: "bg-primary text-on-primary",
+  },
+  {
+    quote:
+      "My son cracked Sainik School Bhubaneswar in his first attempt. The mock test schedules and OMR drills at ADAS removed all his examination fear. Teachers give personal attention even after hours.",
+    name: "Bikash Panda",
+    role: "Father of Cadet Anmol • Sambalpur",
+    initials: "BP",
+    avatarBg: "bg-secondary-container text-on-secondary",
+  },
+  {
+    quote:
+      "We enrolled our daughter into the residential hostel batch. The discipline, safety, and healthy routine transformed her confidence completely. Highly recommended for all defence aspirants across Odisha.",
+    name: "Sunita Meher",
+    role: "Mother of Cadet Swati • Bargarh",
+    initials: "SM",
+    avatarBg: "bg-primary-container text-on-primary",
+  },
+  {
+    quote:
+      "The physical obstacle ground and military morning drills at ADAS built incredible mental grit in my son. He cleared the RMS medical and interview with flying colors.",
+    name: "Dillip Kumar Sahu",
+    role: "Father of Cadet Ayush • Sambalpur",
+    initials: "DS",
+    avatarBg: "bg-secondary text-on-secondary",
+  },
+];
+
+function ReviewCard({ review }: { review: ReviewItem }) {
+  return (
+    <div className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between w-[320px] sm:w-[380px] md:w-[420px] flex-shrink-0 select-none">
+      <div className="space-y-4">
+        <span className="material-symbols-outlined text-secondary-container text-[32px] select-none">
+          format_quote
+        </span>
+        <p className="font-body-md text-body-md text-on-surface italic leading-relaxed line-clamp-4">
+          &quot;{review.quote}&quot;
+        </p>
+      </div>
+      <div className="flex items-center gap-3 pt-6 mt-6 border-t-0 bg-surface-container-low rounded-xl p-3">
+        <div
+          className={`w-10 h-10 rounded-full ${review.avatarBg} flex items-center justify-center font-bold text-caption flex-shrink-0`}
+        >
+          {review.initials}
+        </div>
+        <div className="min-w-0">
+          <span className="font-title-md text-title-md text-primary block leading-tight truncate">
+            {review.name}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ResultPage() {
   const [currentExam, setCurrentExam] = useState<string>("all");
   const [isLoadedMore, setIsLoadedMore] = useState(false);
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   const allCadets = isLoadedMore ? [...CADETS, ...ADDITIONAL_CADETS] : CADETS;
 
@@ -394,10 +517,6 @@ export default function ResultPage() {
 
   const handleLoadMore = () => {
     setIsLoadedMore(true);
-  };
-
-  const handleGazetteDownload = () => {
-    alert("Downloading ADAS Official 2024-2026 Merit Gazette (PDF)...");
   };
 
   return (
@@ -681,7 +800,7 @@ export default function ResultPage() {
       </section>
 
       {/* SECTION 6: VERIFIED PARENT & CADET TESTIMONIALS STRIP */}
-      <section className="bg-secondary-fixed/15 py-16 px-margin">
+      <section className="bg-secondary-fixed/15 py-16 px-6 sm:px-10 md:px-16 lg:px-20 overflow-hidden">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="inline-flex items-center gap-1 text-secondary-container mb-2">
@@ -724,88 +843,61 @@ export default function ResultPage() {
               selections from Sambalpur, Bargarh, Jharsuguda, and Rourkela.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Testimonial 1 */}
-            <div className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-              <div className="space-y-4">
-                <span className="material-symbols-outlined text-secondary-container text-[32px] select-none">
-                  format_quote
-                </span>
-                <p className="font-body-md text-body-md text-on-surface italic leading-relaxed">
-                  &quot;Coming from Bargarh, we were worried about hostel
-                  discipline. But ADAS mentors treated my son like family. The
-                  daily speed math drills gave him the confidence to crack
-                  AISSEE with 279 marks.&quot;
-                </p>
-              </div>
-              <div className="flex items-center gap-3 pt-6 mt-6 border-t-0 bg-surface-container-low rounded-xl p-3">
-                <div className="w-10 h-10 rounded-full bg-secondary-container text-on-secondary flex items-center justify-center font-bold text-caption">
-                  BP
-                </div>
-                <div>
-                  <span className="font-title-md text-title-md text-primary block leading-tight">
-                    Bhabani S. Patel
-                  </span>
-                  <span className="font-caption text-caption text-outline block">
-                    Father of Ananya • Bargarh, Odisha
-                  </span>
-                </div>
-              </div>
-            </div>
+        </div>
 
-            {/* Testimonial 2 */}
-            <div className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-              <div className="space-y-4">
-                <span className="material-symbols-outlined text-secondary-container text-[32px] select-none">
-                  format_quote
-                </span>
-                <p className="font-body-md text-body-md text-on-surface italic leading-relaxed">
-                  &quot;No other coaching in Western Odisha has this kind of
-                  mock-test discipline. They conducted 45 full-length OMR exams
-                  before the real test. My son didn’t panic even for a
-                  second.&quot;
-                </p>
-              </div>
-              <div className="flex items-center gap-3 pt-6 mt-6 border-t-0 bg-surface-container-low rounded-xl p-3">
-                <div className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-caption">
-                  KN
-                </div>
-                <div>
-                  <span className="font-title-md text-title-md text-primary block leading-tight">
-                    Kamal Lochan Nayak
-                  </span>
-                  <span className="font-caption text-caption text-outline block">
-                    Father of Debabrata • Jharsuguda
-                  </span>
-                </div>
-              </div>
-            </div>
+        {/* Embedded Marquee Styles for Guaranteed Animation */}
+        <style>{`
+          @keyframes marqueeMoveRight {
+            0% {
+              transform: translate3d(-50%, 0, 0);
+            }
+            100% {
+              transform: translate3d(0, 0, 0);
+            }
+          }
+          @keyframes marqueeMoveLeft {
+            0% {
+              transform: translate3d(0, 0, 0);
+            }
+            100% {
+              transform: translate3d(-50%, 0, 0);
+            }
+          }
+          .marquee-track-right {
+            display: flex !important;
+            width: max-content !important;
+            animation: marqueeMoveRight 35s linear infinite !important;
+            will-change: transform;
+          }
+          .marquee-track-left {
+            display: flex !important;
+            width: max-content !important;
+            animation: marqueeMoveLeft 35s linear infinite !important;
+            will-change: transform;
+          }
+          .marquee-track-right:hover,
+          .marquee-track-left:hover {
+            animation-play-state: paused !important;
+          }
+        `}</style>
 
-            {/* Testimonial 3 */}
-            <div className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-              <div className="space-y-4">
-                <span className="material-symbols-outlined text-secondary-container text-[32px] select-none">
-                  format_quote
-                </span>
-                <p className="font-body-md text-body-md text-on-surface italic leading-relaxed">
-                  &quot;The faculty in Sambalpur gave extra attention to reasoning
-                  and interview grooming. Getting into RMS Chail was a distant
-                  dream until ADAS provided the exact roadmap.&quot;
-                </p>
-              </div>
-              <div className="flex items-center gap-3 pt-6 mt-6 border-t-0 bg-surface-container-low rounded-xl p-3">
-                <div className="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-caption">
-                  SM
-                </div>
-                <div>
-                  <span className="font-title-md text-title-md text-primary block leading-tight">
-                    Suresh Chandra Meher
-                  </span>
-                  <span className="font-caption text-caption text-outline block">
-                    Father of Ashutosh • Sambalpur
-                  </span>
-                </div>
-              </div>
+        {/* Dual Marquee Rows */}
+        <div className="marquee-mask space-y-6 w-full max-w-[1360px] mx-auto overflow-hidden">
+          {/* Top Review Cards: Move from left to right */}
+          <div className="flex w-full overflow-hidden">
+            <div className="marquee-track-right flex gap-6 pr-6">
+              {[...TOP_REVIEWS, ...TOP_REVIEWS].map((review, idx) => (
+                <ReviewCard key={`top-${idx}`} review={review} />
+              ))}
+            </div>
+          </div>
+
+          {/* Down Review Cards: Move from right to left */}
+          <div className="flex w-full overflow-hidden">
+            <div className="marquee-track-left flex gap-6 pr-6">
+              {[...BOTTOM_REVIEWS, ...BOTTOM_REVIEWS].map((review, idx) => (
+                <ReviewCard key={`bottom-${idx}`} review={review} />
+              ))}
             </div>
           </div>
         </div>
@@ -829,27 +921,28 @@ export default function ResultPage() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-4 justify-center shrink-0">
-            <Link
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn shadow-xl hover:shadow-2xl transition-all hover:scale-105"
-              data-path="contact"
-              href="/#contact"
-            >
-              Book Free Diagnostic Test
-            </Link>
             <button
               type="button"
+              onClick={() => setEnquiryOpen(true)}
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
+            >
+              Book Free Diagnostic Test
+            </button>
+            <a
+              href="tel:9149771961"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 text-on-primary font-label-btn text-label-btn backdrop-blur-md transition-all cursor-pointer"
-              id="gazetteBtn"
-              onClick={handleGazetteDownload}
             >
               <span className="material-symbols-outlined text-[18px]">
-                download
+                call
               </span>
-              <span>Download 2024–26 Gazette PDF</span>
-            </button>
+              <span>Call Admissions Helpline</span>
+            </a>
           </div>
         </div>
       </section>
+
+      {/* Enquiry / Callback Modal */}
+      <EnquiryModal open={enquiryOpen} onClose={() => setEnquiryOpen(false)} />
     </div>
   );
 }

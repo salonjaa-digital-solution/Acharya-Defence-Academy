@@ -222,9 +222,6 @@ export default function ParentVoicesCarousel() {
                     <h4 className="font-bold text-slate-900 text-base leading-tight truncate">
                       {item.name}
                     </h4>
-                    <p className="text-caption font-caption text-slate-500 leading-tight mt-0.5 truncate">
-                      {item.role}
-                    </p>
                   </div>
                 </div>
               </div>
