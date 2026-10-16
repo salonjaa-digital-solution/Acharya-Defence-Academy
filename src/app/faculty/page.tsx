@@ -5,6 +5,7 @@ import EnquiryModal from "@/components/EnquiryModal";
 import founderImg from "@/assets/founder.jpeg";
 import founderBook from "@/assets/founder-book.jpg";
 import founderBookFront from "@/assets/founder-book-front.jpg";
+import facultyTeam from "@/assets/faculty-team.jpg";
 
 export default function FacultyPage() {
   const [callbackModalOpen, setCallbackModalOpen] = useState(false);
@@ -221,44 +222,80 @@ export default function FacultyPage() {
                   workspace_premium
                 </span>
                 <span>
-                  Founder &amp; Chief Academic Director, ADA Sambalpur
+                  Founder &amp; Chief Academic Director, ADAS
                 </span>
               </div>
             </div>
             {/* Right: Comprehensive Bio Details */}
             <div className="lg:col-span-7 p-8 md:p-12 flex flex-col justify-between">
               <div>
-                <div className="flex items-center gap-3 mb-1">
-                  <h3 className="font-headline-md text-headline-md text-primary font-bold">
-                    Himanshu Sekhar Acharya
-                  </h3>
-                  <span className="material-symbols-outlined text-secondary-container text-[22px]">
-                    verified
-                  </span>
-                </div>
-                <p className="font-title-md text-title-md text-secondary font-medium mb-space-sm">
-                  Founder &amp; Chief Academic Director, ADA Sambalpur
+                <h3 className="font-headline-md text-headline-md text-primary font-bold mb-1">
+                  Sub Himanshu Sekhar Acharya (Retd.)
+                </h3>
+                <p className="font-title-md text-title-md text-secondary font-medium mb-1">
+                  Director, Acharya Defence Academy, Sambalpur
+                </p>
+                <p className="text-xs sm:text-sm text-on-surface-variant font-medium mb-space-sm">
+                  Ex Education Junior Commissioned Officer Indian Army
                 </p>
 
-                {/* Director's Mission Quote */}
-                <div className="relative bg-surface-container-low p-space-md rounded-xl mb-space-lg">
-                  <span className="material-symbols-outlined text-secondary-container/30 text-4xl absolute top-2 right-2 pointer-events-none">
+                {/* Director's Introduction & Message */}
+                <div className="relative bg-surface-container-low p-space-md sm:p-6 rounded-2xl mb-space-lg max-h-[380px] overflow-y-auto space-y-3 pr-3 border border-surface-variant/40 shadow-xs">
+                  <span className="material-symbols-outlined text-secondary-container/20 text-4xl absolute top-3 right-3 pointer-events-none">
                     format_quote
                   </span>
-                  <p className="font-body-md text-body-md text-on-surface italic leading-relaxed">
-                    &quot;Every child has the spark of a cadet officer; they
-                    only need the unyielding discipline, speed-accuracy habit,
-                    and mentorship that standard schooling cannot provide. At
-                    ADAS, our mission is to ensure Western Odisha&apos;s bright
-                    minds enter the country&apos;s finest defence cradles with
-                    All-India Ranks.&quot;
+
+                  <p className="font-title-sm text-primary font-bold text-sm tracking-wide">
+                    Jai Hind!
                   </p>
+
+                  <p className="font-body-sm text-sm text-on-surface leading-relaxed">
+                    I am Sub Himanshu Sekhar Acharya (Retd.), popularly known as Acharya Sir, the Director of Acharya Defence Academy, Sambalpur.
+                  </p>
+
+                  <p className="font-body-sm text-sm text-on-surface leading-relaxed">
+                    My mission is not merely to teach students, but to shape their future, build their character, develop discipline, and inspire them to achieve their dreams.
+                  </p>
+
+                  <p className="font-body-sm text-sm text-on-surface leading-relaxed">
+                    I strongly believe that every child has the potential to achieve something extraordinary. With the right guidance, consistent hard work, self-confidence, and determination, every dream can move towards reality.
+                  </p>
+
+                  <p className="font-body-sm text-sm text-on-surface leading-relaxed">
+                    At Acharya Defence Academy, we prepare young aspirants for the entrance examinations of Sainik Schools, Rashtriya Military Schools (RMS), RIMC, and Jawahar Navodaya Vidyalayas. Our focus goes beyond academic preparation. We strive to instil discipline, leadership, patriotism, moral values, and a winning attitude in every student.
+                  </p>
+
+                  <p className="font-body-sm text-sm text-on-surface leading-relaxed">
+                    For me, every student is more than a name on an attendance register. Every student is a dream, a hope, and a future waiting to shine. Their success is my motivation, their progress is my satisfaction, and their achievements are the greatest reward for my efforts.
+                  </p>
+
+                  <p className="font-body-sm text-sm text-on-surface leading-relaxed">
+                    Dear students, always remember: success does not come overnight. It comes through dedication, discipline, perseverance, and the courage to never give up.
+                  </p>
+
+                  <p className="font-body-sm text-sm text-on-surface leading-relaxed">
+                    Parents, when you entrust your children&apos;s future to us, we understand the responsibility that comes with your trust. We strive to guide every child with care, commitment, and a clear focus on their goals.
+                  </p>
+
+                  <p className="font-body-sm text-sm text-on-surface leading-relaxed">
+                    Let us work together to transform dreams into achievements and young minds into confident, responsible citizens of our nation.
+                  </p>
+
+                  <p className="font-title-sm text-secondary font-bold text-sm">
+                    Your dream is our mission. Your success is our commitment.
+                  </p>
+
+                  <div className="pt-2 border-t border-surface-variant/30 text-xs text-primary font-bold space-y-0.5">
+                    <p>Jai Hind! Jai Bharat!</p>
+                    <p className="text-secondary-container">Acharya Defence Academy, Sambalpur</p>
+                    <p className="text-on-surface-variant italic font-normal">Future Victories Begin Here!</p>
+                  </div>
                 </div>
                 {/* Key Milestones Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-space-sm mb-space-lg">
                   <div className="p-3 bg-surface-container-low rounded-lg">
                     <span className="block font-headline-sm text-headline-sm text-primary font-bold">
-                      142+
+                      200+
                     </span>
                     <span className="font-caption text-caption text-on-surface-variant">
                       Sainik School &amp; RMS Qualifiers
@@ -640,7 +677,41 @@ export default function FacultyPage() {
             </p>
           </div>
 
-          {/* 8 Faculty Services Cards Grid (No Images - Modern Iconography & Metrics) */}
+          {/* Core Mentorship Faculty Team Showcase */}
+          <div className="mb-14 rounded-3xl overflow-hidden bg-gradient-to-r from-primary via-primary-container to-tertiary shadow-xl border border-outline-variant/20 grid grid-cols-1 lg:grid-cols-12 items-center">
+            <div className="lg:col-span-7 relative h-72 sm:h-96 w-full overflow-hidden bg-surface-container-high">
+              <img
+                src={facultyTeam.src}
+                alt="Acharya Defence Academy Faculty Mentors"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-primary/50 via-transparent to-transparent pointer-events-none" />
+            </div>
+            <div className="lg:col-span-5 p-6 sm:p-8 md:p-10 text-on-primary space-y-4">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-secondary-container text-on-secondary text-xs font-bold uppercase tracking-wider">
+                <span className="material-symbols-outlined text-[15px]">groups</span>
+                <span>Our Core Mentors</span>
+              </div>
+              <h3 className="font-headline-md text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                Dedicated Mentors Forged in Discipline
+              </h3>
+              <p className="text-primary-fixed-dim text-sm sm:text-base leading-relaxed">
+                Our specialized team of entrance experts brings over 14+ years of collective experience guiding Class V &amp; VIII cadets through AISSEE, RMS, RIMC, and Navodaya examinations.
+              </p>
+              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-semibold text-secondary-fixed">
+                <span className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-sm text-secondary-container">check_circle</span>
+                  Ex-Defence Panel Guidance
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-sm text-secondary-container">check_circle</span>
+                  1-on-1 Concept Resolution
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* 8 Faculty Services Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1: 1-on-1 Doubt Resolution Cell */}
             <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/20 hover:border-secondary-container/40 flex flex-col justify-between group hover:-translate-y-1 relative overflow-hidden">

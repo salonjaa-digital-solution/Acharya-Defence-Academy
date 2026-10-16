@@ -57,24 +57,8 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          {/* Glassmorphic Highlights Quad */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md lg:gap-space-lg pt-space-lg mt-space-sm max-w-5xl mx-auto">
-            <div className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all">
-              <div className="w-14 h-14 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-fixed-dim mb-4 group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-[32px]">
-                  domain
-                </span>
-              </div>
-              <span className="font-display text-headline-lg md:text-headline-lg text-on-primary tracking-tight">
-                12+ Acres
-              </span>
-              <span className="font-title-md text-title-md text-secondary-fixed mt-1">
-                Dedicated Campus
-              </span>
-              <span className="font-body-sm text-body-sm text-on-primary-container mt-1">
-                Dhankauda, Sambalpur
-              </span>
-            </div>
+          {/* Glassmorphic Highlights Triad */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md lg:gap-space-lg pt-space-lg mt-space-sm max-w-4xl mx-auto">
 
             <div className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all">
               <div className="w-14 h-14 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-fixed-dim mb-4 group-hover:scale-110 transition-transform">

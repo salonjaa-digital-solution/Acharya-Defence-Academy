@@ -400,3 +400,99 @@
   mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
 }
+
+/* Telephone Ringing & Vibration Animation */
+@keyframes phone-vibrate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0) scale(1);
+  }
+  2% {
+    transform: rotate(-22deg) translate3d(-2px, -1px, 0) scale(1.1);
+  }
+  4% {
+    transform: rotate(22deg) translate3d(2px, 1px, 0) scale(1.1);
+  }
+  6% {
+    transform: rotate(-20deg) translate3d(-2px, 1px, 0) scale(1.1);
+  }
+  8% {
+    transform: rotate(20deg) translate3d(2px, -1px, 0) scale(1.1);
+  }
+  10% {
+    transform: rotate(-15deg) translate3d(-1px, 0, 0) scale(1.08);
+  }
+  12% {
+    transform: rotate(15deg) translate3d(1px, 0, 0) scale(1.08);
+  }
+  14% {
+    transform: rotate(-10deg) translate3d(-1px, 1px, 0) scale(1.05);
+  }
+  16% {
+    transform: rotate(10deg) translate3d(1px, -1px, 0) scale(1.05);
+  }
+  18% {
+    transform: rotate(-5deg) translate3d(0, 0, 0) scale(1.02);
+  }
+  20% {
+    transform: rotate(5deg) translate3d(0, 0, 0) scale(1.02);
+  }
+  22% {
+    transform: rotate(0deg) translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes phone-ring-ripple {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.75;
+  }
+  40% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+
+@keyframes vibration-wave {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.85);
+  }
+  5%, 18% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  24% {
+    opacity: 0.2;
+    transform: scale(0.85);
+  }
+}
+
+.animate-phone-vibrate {
+  animation: phone-vibrate 2.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  transform-origin: center center;
+  display: inline-block;
+}
+
+.animate-phone-ripple {
+  animation: phone-ring-ripple 2.2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-phone-ripple-delayed {
+  animation: phone-ring-ripple 2.2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation-delay: 0.45s;
+}
+
+.animate-vibration-wave {
+  animation: vibration-wave 2.2s ease-in-out infinite;
+}
+
+.animate-phone-ring {
+  animation: phone-vibrate 2.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  transform-origin: center center;
+}

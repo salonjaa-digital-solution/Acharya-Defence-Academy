@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Icon from "@/components/Icon";
 import heroCadet from "@/assets/hero-cadet.webp";
@@ -15,11 +15,28 @@ import ParentVoicesCarousel from "@/components/ParentVoicesCarousel";
 import CallbackCard from "@/components/CallbackCard";
 import EnquiryModal from "@/components/EnquiryModal";
 import VideoModal from "@/components/VideoModal";
+import CourseDetailModal from "@/components/CourseDetailModal";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [heroEnquiryOpen, setHeroEnquiryOpen] = useState(false);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const hash = window.location.hash.replace("#", "");
+      if (hash === "testimonials" || hash === "parent-voices") {
+        const timer = setTimeout(() => {
+          const el = document.getElementById(hash) || document.getElementById("testimonials");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -62,8 +79,8 @@ export default function Home() {
               {/* Eyebrow Pill */}
               <div className="inline-flex items-center gap-space-xs bg-secondary-container/20 text-secondary-container px-4 py-1.5 rounded-full backdrop-blur-md">
                 <Icon name="military_tech" className="text-sm" />
-                <span className="font-label-eyebrow text-label-eyebrow tracking-widest">
-                  ★ WESTERN ODISHA&apos;S TRUSTED DEFENCE ACADEMY ★
+                <span className="font-label-eyebrow text-label-eyebrow tracking-widest uppercase">
+                  ★ ACHARYA DEFENCE ACADEMY ★
                 </span>
               </div>
 
@@ -75,7 +92,7 @@ export default function Home() {
               </h1>
 
               <p className="font-body-lg text-body-lg text-on-primary-container max-w-xl">
-                Premier coaching for Class V &amp; VII aspirants aiming for Sainik Schools, RMS, and RIMC. Rooted in Sambalpur, forged in unyielding military discipline. Future Victories Begin Here.
+                Welcome to our institute, where learning is exciting and everyone thrives. With passionate teachers, top facilities, and cutting-edge tech, we support personal and academic growth. Embracing diversity, we value each unique perspective. Through partnerships, we offer hands-on experiences bridging classroom learning with the real world. Join us in this journey of exploration and empowerment, unlocking endless opportunities for success and positive impact.
               </p>
 
               {/* CTAs */}
@@ -185,7 +202,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-title-md text-title-md font-bold text-primary leading-tight">
-                      148+ Cadets
+                      200+ Cadets
                     </p>
                     <p className="font-caption text-caption text-on-surface-variant leading-tight">
                       Selected into AISSEE &amp; RMS
@@ -257,7 +274,7 @@ export default function Home() {
             </div>
             <div>
               <span className="font-display text-headline-md text-primary font-extrabold tracking-tight">
-                148+
+                200+
               </span>
               <p className="font-body-sm text-body-sm text-on-surface-variant font-medium">
                 AISSEE &amp; RMS Selections
@@ -330,7 +347,10 @@ export default function Home() {
           {/* Bento Grid Container */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md items-stretch">
             {/* Hero Card (Spanning 2 rows on Desktop) */}
-            <div className="lg:row-span-2 bg-gradient-to-br from-primary via-primary-container to-tertiary text-on-primary rounded-3xl p-space-lg shadow-xl relative overflow-hidden flex flex-col justify-between">
+            <div
+              onClick={() => setSelectedCourse("aissee")}
+              className="lg:row-span-2 bg-gradient-to-br from-primary via-primary-container to-tertiary text-on-primary rounded-3xl p-space-lg shadow-xl relative overflow-hidden flex flex-col justify-between cursor-pointer hover:shadow-2xl transition-all"
+            >
               <div className="absolute -right-8 -top-8 w-44 h-44 rounded-full bg-secondary-container/20 blur-2xl pointer-events-none"></div>
               <div className="space-y-space-md relative z-10">
                 <div className="flex items-center justify-between">
@@ -373,19 +393,26 @@ export default function Home() {
               </div>
 
               <div className="pt-space-lg relative z-10">
-                <a
-                  className="w-full inline-flex items-center justify-center gap-space-xs bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn py-3.5 px-6 rounded-full shadow-md transition-all"
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedCourse("aissee");
+                  }}
+                  className="w-full inline-flex items-center justify-center gap-space-xs bg-secondary-container hover:bg-secondary text-on-secondary font-label-btn text-label-btn py-3.5 px-6 rounded-full shadow-md transition-all cursor-pointer"
                   data-path="courses"
-                  href="#contact"
                 >
                   <span>Explore AISSEE Details</span>
                   <Icon name="arrow_forward" className="text-[18px]" />
-                </a>
+                </button>
               </div>
             </div>
 
             {/* Card 2: RMS Coaching */}
-            <div className="bg-surface-container-lowest rounded-3xl p-space-md shadow-md hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div
+              onClick={() => setSelectedCourse("rms")}
+              className="bg-surface-container-lowest rounded-3xl p-space-md shadow-md hover:shadow-xl transition-all flex flex-col justify-between group cursor-pointer"
+            >
               <div className="space-y-space-sm">
                 <div className="flex items-center justify-between">
                   <div className="w-12 h-12 rounded-2xl bg-secondary-fixed text-secondary flex items-center justify-center">
@@ -413,7 +440,10 @@ export default function Home() {
             </div>
 
             {/* Card 3: RIMC  */}
-            <div className="bg-surface-container-lowest rounded-3xl p-space-md shadow-md hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div
+              onClick={() => setSelectedCourse("rimc")}
+              className="bg-surface-container-lowest rounded-3xl p-space-md shadow-md hover:shadow-xl transition-all flex flex-col justify-between group cursor-pointer"
+            >
               <div className="space-y-space-sm">
                 <div className="flex items-center justify-between">
                   <div className="w-12 h-12 rounded-2xl bg-primary-fixed text-primary flex items-center justify-center">
@@ -441,7 +471,10 @@ export default function Home() {
             </div>
 
             {/* Card 4: Jawahar Navodaya Vidyalaya (JNV) */}
-            <div className="bg-surface-container-lowest rounded-3xl p-space-md shadow-md hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div
+              onClick={() => setSelectedCourse("jnvst")}
+              className="bg-surface-container-lowest rounded-3xl p-space-md shadow-md hover:shadow-xl transition-all flex flex-col justify-between group cursor-pointer"
+            >
               <div className="space-y-space-sm">
                 <div className="flex items-center justify-between">
                   <div className="w-12 h-12 rounded-2xl bg-surface-container-highest text-primary-container flex items-center justify-center">
@@ -469,7 +502,10 @@ export default function Home() {
             </div>
 
             {/* Card 5: Odisha Adarsh Vidyalaya (OAV) & CBSE */}
-            <div className="bg-surface-container-lowest rounded-3xl p-space-md shadow-md hover:shadow-xl transition-all flex flex-col justify-between group">
+            <div
+              onClick={() => setSelectedCourse("oav-cbse")}
+              className="bg-surface-container-lowest rounded-3xl p-space-md shadow-md hover:shadow-xl transition-all flex flex-col justify-between group cursor-pointer"
+            >
               <div className="space-y-space-sm">
                 <div className="flex items-center justify-between">
                   <div className="w-12 h-12 rounded-2xl bg-secondary-fixed text-secondary flex items-center justify-center">
@@ -780,7 +816,7 @@ export default function Home() {
                     <Icon name="school" className="text-[20px]" />
                   </div>
                   <h4 className="font-title-sm text-title-sm text-white font-bold mb-1">
-                    Western Odisha Pride
+                    Odisha Pride
                   </h4>
                   <p className="font-body-sm text-xs text-on-primary-container leading-relaxed">
                     Bringing metro-calibre entrance prep and military discipline right to Sambalpur.
@@ -937,7 +973,7 @@ export default function Home() {
                 Hall of Fame
               </span>
               <h2 className="font-headline-lg text-headline-lg text-on-primary">
-                Western Odisha&apos;s Proud{" "}
+                Our Proud{" "}
                 <span className="text-secondary-container">Achievers</span>
               </h2>
               <p className="font-body-md text-body-md text-on-primary-container">
@@ -1129,8 +1165,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. TESTIMONIALS */}
-      <section id="testimonials" className="w-full bg-secondary-fixed/20 py-space-xl overflow-hidden">
+      {/* 9. TESTIMONIALS / PARENT VOICES */}
+      <section
+        id="testimonials"
+        className="w-full bg-secondary-fixed/20 py-space-xl overflow-hidden scroll-mt-20"
+      >
+        <span id="parent-voices" className="scroll-mt-20" />
         <div className="max-w-[1280px] mx-auto px-margin space-y-space-lg">
           <div className="text-center max-w-2xl mx-auto space-y-space-xs">
             <span className="bg-secondary-fixed text-secondary px-3.5 py-1 rounded-full font-label-eyebrow text-label-eyebrow uppercase tracking-widest inline-block shadow-xs">
@@ -1291,6 +1331,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <CourseDetailModal
+        courseId={selectedCourse}
+        onClose={() => setSelectedCourse(null)}
+        onEnquire={() => setHeroEnquiryOpen(true)}
+      />
       <EnquiryModal open={heroEnquiryOpen} onClose={() => setHeroEnquiryOpen(false)} />
       <VideoModal
         open={videoModalOpen}

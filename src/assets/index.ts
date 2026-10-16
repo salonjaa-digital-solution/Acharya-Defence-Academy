@@ -6,6 +6,9 @@ import student2 from "./student2.webp";
 import student3 from "./student3.webp";
 import student4 from "./student4.webp";
 import smartClassroom from "./smart.jpeg";
+import smartClassroomSession from "./smart-classroom-session.jpg";
+import smartClassroomDirector from "./smart-classroom-director.jpg";
+import smartClassroomInteractive from "./smart-classroom-interactive.jpg";
 import directorImg from "./Director-ADAS.png";
 import obstacleGround from "./obstacle-ground.webp";
 import libraryStudyHall from "./library-study-hall.webp";
@@ -21,6 +24,7 @@ import founderImg from "./founder.jpeg";
 import founderBook from "./founder-book.jpg";
 import founderBookFront from "./founder-book-front.jpg";
 import certificateClassplus from "./certificate-classplus.jpg";
+import facultyTeam from "./faculty-team.jpg";
 
 import cadetSaksham from "./cadet-saksham.webp";
 import cadetAnshuman from "./cadet-anshuman.webp";
@@ -46,6 +50,9 @@ export {
   student3,
   student4,
   smartClassroom,
+  smartClassroomSession,
+  smartClassroomDirector,
+  smartClassroomInteractive,
   directorImg,
   obstacleGround,
   libraryStudyHall,
@@ -75,6 +82,7 @@ export {
   cadetPrayag,
   cadetRudransh,
   cadetShivesh,
+  facultyTeam,
 };
 
 export { galleryItems, type GalleryImageItem } from "./gallary";

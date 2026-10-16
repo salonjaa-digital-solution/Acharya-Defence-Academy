@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import directorImg from "@/assets/Director-ADAS.png";
-import smartClassroom from "@/assets/smart.jpeg";
+import SmartClassroomTile from "@/components/SmartClassroomTile";
 import obstacleGround from "@/assets/obstacle-ground.webp";
 import libraryStudyHall from "@/assets/library-study-hall.webp";
 import cadetDormitory from "@/assets/cadet-dormitory.webp";
@@ -177,7 +177,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <p className="font-title-md text-title-md font-bold text-primary leading-tight">
-                    148+ Cadets
+                    200+ Cadets
                   </p>
                   <p className="font-caption text-caption text-on-surface-variant leading-tight">
                     Selected into AISSEE &amp; RMS
@@ -192,7 +192,7 @@ export default function AboutPage() {
                   Genesis of Excellence
                 </span>
                 <h2 className="font-headline-lg text-headline-lg text-primary tracking-tight">
-                  Bridging the Frontier of National Defence for Odisha&apos;s Youth
+                  Bridging the Frontier of National Defence for National&apos;s Youth
                 </h2>
                 <div className="w-12 h-1 bg-on-tertiary-container rounded-full"></div>
               </div>
@@ -597,27 +597,7 @@ export default function AboutPage() {
           {/* Bento Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
             {/* Feature 1: Smart Classrooms (Large tile) */}
-            <div className="md:col-span-2 lg:col-span-2 relative rounded-2xl overflow-hidden shadow-sm group min-h-[300px]">
-              <Image
-                src={smartClassroom}
-                alt="Smart Interactive Classrooms"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent p-space-md flex flex-col justify-end">
-                <span className="font-label-sm text-label-sm text-tertiary-fixed uppercase tracking-wider">
-                  Acoustic &amp; Multimedia
-                </span>
-                <h3 className="font-headline-sm text-headline-sm text-on-primary">
-                  Smart Interactive Classrooms
-                </h3>
-                <p className="font-body-sm text-body-sm text-primary-fixed-dim line-clamp-2">
-                  Equipped with digital projection, instant diagnostic clickers,
-                  and comprehensive subject visualizers.
-                </p>
-              </div>
-            </div>
+            <SmartClassroomTile />
             {/* Feature 2: Obstacle Ground */}
             <div className="md:col-span-1 lg:col-span-2 relative rounded-2xl overflow-hidden shadow-sm group min-h-[300px]">
               <Image

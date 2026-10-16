@@ -49,8 +49,8 @@ export default function Navbar() {
     <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <header
         className={`w-full transition-all duration-300 ${scrolled
-            ? "bg-white/90 backdrop-blur-xl border-b border-surface-variant/40 shadow-[0_4px_24px_rgba(7,44,84,0.08)]"
-            : "bg-white/95 backdrop-blur-md border-b border-surface-container/60 shadow-[0_2px_12px_rgba(7,44,84,0.04)]"
+          ? "bg-white/90 backdrop-blur-xl border-b border-surface-variant/40 shadow-[0_4px_24px_rgba(7,44,84,0.08)]"
+          : "bg-white/95 backdrop-blur-md border-b border-surface-container/60 shadow-[0_2px_12px_rgba(7,44,84,0.04)]"
           }`}
       >
         <div className="h-16 max-w-[1280px] mx-auto px-3 sm:px-margin-sm lg:px-margin flex items-center justify-between gap-2 sm:gap-space-md">
@@ -70,12 +70,12 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-headline-sm text-xs sm:text-sm text-primary font-bold tracking-tight leading-none group-hover:text-secondary transition-colors">
-                ADA
+              <span className="font-headline-sm text-2xl sm:text-3xl text-primary font-extrabold tracking-tight leading-none group-hover:text-secondary transition-colors">
+                ADAS
               </span>
-              <span className="font-label-sm text-[8px] sm:text-[9px] text-secondary font-bold uppercase tracking-widest leading-normal">
+              {/* <span className="font-label-sm text-[8px] sm:text-[9px] text-secondary font-bold uppercase tracking-widest leading-normal">
                 Sambalpur
-              </span>
+              </span> */}
             </div>
           </Link>
 
@@ -90,8 +90,8 @@ export default function Navbar() {
                 data-path={item.path}
                 href={item.href}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 ${item.active
-                    ? "bg-white text-primary shadow-xs ring-1 ring-black/5"
-                    : "text-on-surface-variant hover:text-primary hover:bg-white/60"
+                  ? "bg-white text-primary shadow-xs ring-1 ring-black/5"
+                  : "text-on-surface-variant hover:text-primary hover:bg-white/60"
                   }`}
               >
                 {item.label}
@@ -150,8 +150,8 @@ export default function Navbar() {
                   data-path={item.path}
                   href={item.href}
                   className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all flex items-center justify-between ${item.active
-                      ? "bg-surface-container-low text-primary font-bold border-l-4 border-primary"
-                      : "text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest"
+                    ? "bg-surface-container-low text-primary font-bold border-l-4 border-primary"
+                    : "text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest"
                     }`}
                 >
                   <span>{item.label}</span>

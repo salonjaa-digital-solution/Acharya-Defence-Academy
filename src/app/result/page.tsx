@@ -163,7 +163,7 @@ const CADETS: Cadet[] = [
   },
   {
     id: "cadet-adarsh",
-    name: "Adarsh",
+    name: "Akshar",
     exam: "aissee",
     year: "2026",
     badge: "Selected",
@@ -174,7 +174,7 @@ const CADETS: Cadet[] = [
     marksInfo: "AISSEE Qualified",
     imgSrc: cadetAdarsh.src,
     imgAlt: "Adarsh",
-    dataAlt: "Cadet Adarsh selected at Sainik School Sambalpur",
+    dataAlt: "Cadet Akshar selected at Sainik School Sambalpur",
   },
   {
     id: "cadet-avneesh",
@@ -581,7 +581,7 @@ export default function ResultPage() {
                 </span>
               </div>
               <span className="font-display text-headline-lg md:text-headline-lg text-on-primary tracking-tight">
-                142+
+                200+
               </span>
               <span className="font-title-md text-title-md text-secondary-fixed mt-1">
                 Cadets Selected
@@ -678,7 +678,7 @@ export default function ResultPage() {
                 military_tech
               </span>
               <span className="font-label-eyebrow text-label-eyebrow uppercase text-secondary tracking-widest font-bold">
-                Pride of ADA Sambalpur
+                Pride of ADAS
               </span>
             </div>
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import EnquiryModal from "@/components/EnquiryModal";
+import CourseDetailModal from "@/components/CourseDetailModal";
 import courseSainik from "@/assets/course-sainik.webp";
 import courseRms from "@/assets/course-rms.webp";
 import courseRimc from "@/assets/course-rimc.webp";
@@ -16,6 +17,7 @@ type CourseCategory = "all" | "defence" | "gov" | "cbse";
 export default function CoursesPage() {
   const [activeFilter, setActiveFilter] = useState<CourseCategory>("all");
   const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
 
   const isVisible = (category: CourseCategory) => {
     return activeFilter === "all" || activeFilter === category;
@@ -78,7 +80,10 @@ export default function CoursesPage() {
 
           {/* Glassmorphic Trust & Programs Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md lg:gap-space-lg pt-space-lg mt-space-sm max-w-5xl mx-auto">
-            <div className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all">
+            <div
+              onClick={() => setSelectedCourse("aissee")}
+              className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all cursor-pointer"
+            >
               <div className="w-14 h-14 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-fixed-dim mb-4 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-[32px]">
                   school
@@ -95,7 +100,10 @@ export default function CoursesPage() {
               </span>
             </div>
 
-            <div className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all">
+            <div
+              onClick={() => setSelectedCourse("rms")}
+              className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all cursor-pointer"
+            >
               <div className="w-14 h-14 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-fixed-dim mb-4 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-[32px]">
                   military_tech
@@ -112,7 +120,10 @@ export default function CoursesPage() {
               </span>
             </div>
 
-            <div className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all">
+            <div
+              onClick={() => setSelectedCourse("rimc")}
+              className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all cursor-pointer"
+            >
               <div className="w-14 h-14 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-fixed-dim mb-4 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-[32px]">
                   workspace_premium
@@ -129,7 +140,10 @@ export default function CoursesPage() {
               </span>
             </div>
 
-            <div className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all">
+            <div
+              onClick={() => setSelectedCourse("jnvst")}
+              className="relative bg-surface-container-lowest/10 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center text-center group hover:bg-surface-container-lowest/15 transition-all cursor-pointer"
+            >
               <div className="w-14 h-14 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-fixed-dim mb-4 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-[32px]">
                   verified
@@ -206,7 +220,8 @@ export default function CoursesPage() {
           {/* Featured Course: Sainik School (AISSEE) */}
           {isVisible("defence") && (
             <article
-              className="course-card w-full bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl"
+              onClick={() => setSelectedCourse("aissee")}
+              className="course-card w-full bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer"
               data-category="defence"
             >
               <div className="h-2 bg-on-tertiary-container w-full"></div>
@@ -303,15 +318,21 @@ export default function CoursesPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-space-sm">
-                      {/* <button
-                        onClick={() => setEnquiryOpen(true)}
-                        className="px-space-md py-space-sm bg-surface-container text-primary font-label-md text-label-md rounded-xl hover:bg-surface-container-high transition-colors"
-                      >
-                        View Syllabus
-                      </button> */}
                       <button
-                        onClick={() => setEnquiryOpen(true)}
-                        className="px-space-lg py-space-sm bg-tertiary-container text-on-tertiary font-label-md text-label-md rounded-xl hover:bg-tertiary transition-all shadow-sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedCourse("aissee");
+                        }}
+                        className="px-space-md py-space-sm bg-surface-container text-primary font-label-md text-label-md rounded-xl hover:bg-surface-container-high transition-colors cursor-pointer"
+                      >
+                        View Details
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setEnquiryOpen(true);
+                        }}
+                        className="px-space-lg py-space-sm bg-tertiary-container text-on-tertiary font-label-md text-label-md rounded-xl hover:bg-tertiary transition-all shadow-sm cursor-pointer"
                       >
                         Enquire Now
                       </button>
@@ -327,7 +348,8 @@ export default function CoursesPage() {
             {/* Course 2: RMS */}
             {isVisible("defence") && (
               <article
-                className="course-card flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                onClick={() => setSelectedCourse("rms")}
+                className="course-card flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
                 data-category="defence"
               >
                 <div className="h-1 bg-primary-container w-full"></div>
@@ -387,10 +409,13 @@ export default function CoursesPage() {
                     </span>
                   </div>
                   <button
-                    onClick={() => setEnquiryOpen(true)}
-                    className="px-space-md py-space-xs bg-primary-container text-on-primary rounded-xl font-label-sm text-label-sm hover:bg-primary transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedCourse("rms");
+                    }}
+                    className="px-space-md py-space-xs bg-primary-container text-on-primary rounded-xl font-label-sm text-label-sm hover:bg-primary transition-colors cursor-pointer"
                   >
-                    Enquire RMS
+                    View &amp; Enquire
                   </button>
                 </div>
               </article>
@@ -399,7 +424,8 @@ export default function CoursesPage() {
             {/* Course 3: RIMC  */}
             {isVisible("defence") && (
               <article
-                className="course-card flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                onClick={() => setSelectedCourse("rimc")}
+                className="course-card flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
                 data-category="defence"
               >
                 <div className="h-1 bg-tertiary-container w-full"></div>
@@ -460,10 +486,13 @@ export default function CoursesPage() {
                     </span>
                   </div>
                   <button
-                    onClick={() => setEnquiryOpen(true)}
-                    className="px-space-md py-space-xs bg-primary-container text-on-primary rounded-xl font-label-sm text-label-sm hover:bg-primary transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedCourse("rimc");
+                    }}
+                    className="px-space-md py-space-xs bg-primary-container text-on-primary rounded-xl font-label-sm text-label-sm hover:bg-primary transition-colors cursor-pointer"
                   >
-                    Enquire RIMC
+                    View &amp; Enquire
                   </button>
                 </div>
               </article>
@@ -472,7 +501,8 @@ export default function CoursesPage() {
             {/* Course 4: JNVST */}
             {isVisible("gov") && (
               <article
-                className="course-card flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                onClick={() => setSelectedCourse("jnvst")}
+                className="course-card flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
                 data-category="gov"
               >
                 <div className="h-1 bg-secondary w-full"></div>
@@ -533,10 +563,13 @@ export default function CoursesPage() {
                     </span>
                   </div>
                   <button
-                    onClick={() => setEnquiryOpen(true)}
-                    className="px-space-md py-space-xs bg-primary-container text-on-primary rounded-xl font-label-sm text-label-sm hover:bg-primary transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedCourse("jnvst");
+                    }}
+                    className="px-space-md py-space-xs bg-primary-container text-on-primary rounded-xl font-label-sm text-label-sm hover:bg-primary transition-colors cursor-pointer"
                   >
-                    Enquire JNVST
+                    View &amp; Enquire
                   </button>
                 </div>
               </article>
@@ -545,7 +578,8 @@ export default function CoursesPage() {
             {/* Course 5: OAVS */}
             {isVisible("gov") && (
               <article
-                className="course-card flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                onClick={() => setSelectedCourse("oavs")}
+                className="course-card flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
                 data-category="gov"
               >
                 <div className="h-1 bg-surface-tint w-full"></div>
@@ -605,10 +639,13 @@ export default function CoursesPage() {
                     </span>
                   </div>
                   <button
-                    onClick={() => setEnquiryOpen(true)}
-                    className="px-space-md py-space-xs bg-primary-container text-on-primary rounded-xl font-label-sm text-label-sm hover:bg-primary transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedCourse("oavs");
+                    }}
+                    className="px-space-md py-space-xs bg-primary-container text-on-primary rounded-xl font-label-sm text-label-sm hover:bg-primary transition-colors cursor-pointer"
                   >
-                    Enquire OAVS
+                    View &amp; Enquire
                   </button>
                 </div>
               </article>
@@ -617,7 +654,8 @@ export default function CoursesPage() {
             {/* Course 6: CBSE Foundation */}
             {isVisible("cbse") && (
               <article
-                className="course-card flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                onClick={() => setSelectedCourse("cbse")}
+                className="course-card flex flex-col justify-between bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
                 data-category="cbse"
               >
                 <div className="h-1 bg-primary w-full"></div>
@@ -677,10 +715,13 @@ export default function CoursesPage() {
                     </span>
                   </div>
                   <button
-                    onClick={() => setEnquiryOpen(true)}
-                    className="px-space-md py-space-xs bg-primary-container text-on-primary rounded-xl font-label-sm text-label-sm hover:bg-primary transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedCourse("cbse");
+                    }}
+                    className="px-space-md py-space-xs bg-primary-container text-on-primary rounded-xl font-label-sm text-label-sm hover:bg-primary transition-colors cursor-pointer"
                   >
-                    Enquire CBSE
+                    View &amp; Enquire
                   </button>
                 </div>
               </article>
@@ -739,7 +780,12 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* 6. ENQUIRY MODAL */}
+      {/* 6. MODALS */}
+      <CourseDetailModal
+        courseId={selectedCourse}
+        onClose={() => setSelectedCourse(null)}
+        onEnquire={() => setEnquiryOpen(true)}
+      />
       <EnquiryModal open={enquiryOpen} onClose={() => setEnquiryOpen(false)} />
     </div>
   );
